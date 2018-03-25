@@ -1,0 +1,90 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.backgroundScene {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: block;
+    position: fixed;
+    background-image: url("LakeBlur.jpg");
+    background-color: rgb(204, 130, 176);
+    background-size: cover;
+}
+
+.welcomeContainer {
+    height: 40%;
+    width: 50%;
+    top: 30%;
+    bottom: 30%;
+    position: relative;
+    padding: 0;
+    margin: auto;
+    
+    /* Styling */
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(240, 240, 240, 0.5));
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    
+    /* Laying out the Welcome grid */
+    display: grid;
+    grid-template-columns: 3fr 14fr 3fr;
+    grid-template-rows: 1fr 5fr 1fr 2fr 1fr;
+    grid-template-areas:". . ."
+        ". welcomeBox ."
+        ". . ."
+        ". welcomeButton ."
+        ". . .";
+}
+
+.welcomeBox {
+    /* Position in Welcome grid */
+    grid-area: welcomeBox;
+    
+    /* Box Styling */
+    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    
+    /* Font Styling */
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-size: 3vmin;
+}
+
+.welcomeButton {
+    /* Position in Welcome gird */
+    grid-area: welcomeButton;
+    
+    /* Center the enter text */
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    
+    /* Style the box */
+    background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-size: 4vmin;
+    text-decoration: none;
+}
+
+.welcomeButton:hover {
+    background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
+}
+
+.welcomeButton div {
+    margin: auto;
+}
