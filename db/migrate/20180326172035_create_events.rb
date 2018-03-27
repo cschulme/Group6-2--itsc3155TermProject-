@@ -4,9 +4,8 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.string :title
       t.string :location
       t.text :eventInformation
-      t.date :eventDate
-      t.time :startTime
-      t.time :endTime
+      t.datetime :startTime
+      t.datetime :endTime
       t.integer :tag
 
       t.timestamps

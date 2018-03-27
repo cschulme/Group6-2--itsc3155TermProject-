@@ -1,0 +1,52 @@
+<div class="backgroundScene"></div>
+<div class="container">
+    <div class="header">
+        <h1>Your Events</h1>
+    </div>
+    
+    <div class="nav">
+        <a href="/../welcome/index.html">Home</a>
+        <a href="#">Calendar</a>
+        <a href="#">Events</a>
+        <a href="#">Team</a>
+        <a href="#">About</a>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search events..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="indexContainer">
+        <div class="eventsListContainer">
+            <table class="eventsList">
+                <tr>
+                    <th>Title</th>
+                    <th>Location</th>
+                    <th>Information</th>
+                    <th>Starts</th>
+                    <th>Ends</th>
+                    <th>Tags</th>
+                </tr>
+                
+                <% @events.each do |event| %>
+                    <tr>
+                        <td><%= event.title %></td>
+                        <td><%= event.location %></td>
+                        <td><%= truncate(event.eventInformation, length: 80, separator: ' ', omission: '... (continued)') %></td>
+                        <td><%= event.startTime %></td>
+                        <td><%= event.endTime %></td>
+                        <td><%= event.tag %></td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+        
+        <div class="eventsButtons">
+            <div class="newEventButton">
+                <%= link_to 'New Event', new_event_path %>
+            </div>
+        </div>
+    </div>
+</div>

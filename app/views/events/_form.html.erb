@@ -3,9 +3,8 @@
         <%= f.input :title %>
         <%= f.input :location %>
         <%= f.input :eventInformation, :label => "Event Information" %>
-        <%= f.input :eventDate, :label => "Date" %>
-        <%= f.input :startTime, :label => "Starting Time" %>
-        <%= f.input :endTime, :label => "Ending Time" %>
+        <%= f.input :startTime, :label => "Starting Time", :as => :datetime_select %>
+        <%= f.input :endTime, :label => "Ending Time", :as => :datetime_select %>
     <% end %>
     <%= f.actions do %>
         <%= f.action :submit, :as => :button %>

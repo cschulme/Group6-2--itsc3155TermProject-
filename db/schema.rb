@@ -16,9 +16,8 @@ ActiveRecord::Schema.define(version: 20180326172035) do
     t.string "title"
     t.string "location"
     t.text "eventInformation"
-    t.date "eventDate"
-    t.time "startTime"
-    t.time "endTime"
+    t.datetime "startTime"
+    t.datetime "endTime"
     t.integer "tag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
