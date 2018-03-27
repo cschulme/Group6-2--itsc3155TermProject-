@@ -1,41 +1,14 @@
-<%= form_for @event do |f| %>
- 
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@event.errors.count, "error") %> prohibited
-        this event from being saved:
-      </h2>
-      <ul>
-        <% @event.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
- 
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </p>
-  
-  <p>
-    <%= f.label :eventInformation %><br>
-    <%= f.text_area :eventInformation %>
-  </p>
-  
-  <p>
-    <%= f.label :date %><br>
-    <%= f.date_field("event", "date")
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
- 
+<%= semantic_form_for @event do |f| %>
+    <%= f.inputs do %>
+        <%= f.input :title %>
+        <%= f.input :location %>
+        <%= f.input :eventInformation, :label => "Event Information" %>
+        <%= f.input :eventDate, :label => "Date" %>
+        <%= f.input :startTime, :label => "Starting Time" %>
+        <%= f.input :endTime, :label => "Ending Time" %>
+    <% end %>
+    <%= f.actions do %>
+        <%= f.action :submit, :as => :button %>
+        <%= f.action :reset, :as => :button %>
+    <% end %>
 <% end %>
