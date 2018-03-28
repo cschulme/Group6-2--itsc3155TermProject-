@@ -3,9 +3,5 @@
     <div class="welcomeBox">
         <h1>Calendar App</h1>
     </div>
-    <a class ="welcomeButton" href="#">
-        <div>
-            Enter
-        </div>
-    </a>
+    <%= link_to 'Enter', events_path, { :class => "welcomeButton" } %>
 </div>
