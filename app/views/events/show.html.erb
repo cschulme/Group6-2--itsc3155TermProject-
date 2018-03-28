@@ -7,7 +7,7 @@
     <div class="nav">
         <a href="/../welcome/index.html">Home</a>
         <a href="#">Calendar</a>
-        <a href="index.html">Events</a>
+        <%= link_to 'Events', events_path %>
         <a href="#">Team</a>
         <a href="#">About</a>
         <div class="search-container">
@@ -25,10 +25,6 @@
         Ending Time: <%= @event.endTime.strftime("%m/%d/%Y at %H:%M") %><br>
         Tag: <%= @event.tag %><br>
         <br>
-        <%= link_to 'Back to Events', event_path %>
-        <%= link_to 'Delete', 
-                            event_path(event),
-                            method: :delete,
-                            data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Back to Events', events_path %>
     </div>
 </div>
