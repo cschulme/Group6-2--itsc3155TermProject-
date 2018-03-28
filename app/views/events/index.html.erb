@@ -36,8 +36,8 @@
                         <td><%= event.title %></td>
                         <td class="<%= "inactive" if event.location.blank? %>"><%= event.location %></td>
                         <td class="<%= "inactive" if event.eventInformation.blank? %>"><%= truncate(event.eventInformation, length: 80, separator: ' ', omission: '... (continued)') %></td>
-                        <td><%= event.startTime.strftime("%m/%d/%Y at %H:%M") %></td>
-                        <td><%= event.endTime.strftime("%m/%d/%Y at %H:%M") %></td>
+                        <td><%= event.startTime.strftime("%m/%d/%Y at %I:%M %p") %></td>
+                        <td><%= event.endTime.strftime("%m/%d/%Y at %I:%M %p") %></td>
                         <td class="<%= "inactive" if event.tag.blank? %>"><%= event.tag %></td>
                         <td><%= link_to'<i class="fas fa-eye"></i>'.html_safe, event_path(event), :title => "Show Event" %>
                             <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_event_path(event), :title => "Edit Event" %>
