@@ -25,8 +25,8 @@
         Ending Time: <%= @event.endTime.strftime("%m/%d/%Y at %H:%M") %><br>
         Tag: <%= @event.tag %><br>
         <br>
-        <%= link_to 'Back to Events', events_path %>
-        <%= link_to'Delete', 
+        <%= link_to 'Back to Events', event_path %>
+        <%= link_to 'Delete', 
                             event_path(event),
                             method: :delete,
                             data: { confirm: 'Are you sure?' } %>
