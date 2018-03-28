@@ -28,6 +28,7 @@
                     <th>Starts</th>
                     <th>Ends</th>
                     <th>Tags</th>
+                    <th>Options</th>
                 </tr>
                 
                 <% @events.each do |event| %>
@@ -38,6 +39,15 @@
                         <td><%= event.startTime.strftime("%m/%d/%Y at %H:%M") %></td>
                         <td><%= event.endTime.strftime("%m/%d/%Y at %H:%M") %></td>
                         <td><%= event.tag %></td>
+                        <td>
+                            <%= link_to'<i class="fas fa-eye"></i> View'.html_safe, event_path(event) %><br>
+                            <%= link_to'<i class="fas fa-edit"></i> Edit'.html_safe, edit_event_path(event) %><br>
+                            <%= link_to'<i class="fas fa-trash-alt"></i> Delete'.html_safe, 
+                                                                            event_path(event),
+                                                                            method: :delete,
+                                                                            data: { confirm: 'Are you sure?' } %>
+                        </td>
+                        <td></td>
                     </tr>
                 <% end %>
             </table>

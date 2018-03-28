@@ -22,24 +22,24 @@ class EventsController < ApplicationController
     end
     
     def edit
-        @note = Note.find(params[:id])
+        @event = Event.find(params[:id])
     end
     
     def update
-        @note = Note.find(params[:id])
+        @event = Event.find(params[:id])
         
-        if @note.update(note_params)
-            redirect_to @note
+        if @event.update(event_params)
+            redirect_to @event
         else
             render 'edit'
         end
     end
     
     def destroy
-        @note = Note.find(params[:id])
-        @note.destroy
+        @event = Event.find(params[:id])
+        @event.destroy
         
-        redirect_to notes_path
+        redirect_to events_path
     end
 end
 

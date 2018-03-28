@@ -17,6 +17,10 @@ html, body {
     background-size: cover;
 }
 
+a {
+    text_decoration: none;
+}
+
 .container {
     /* Dimensions of Container */
     height: 100%;
@@ -156,7 +160,7 @@ html, body {
 /* --- Event Index Table --- */
 .eventsListContainer {
     grid-area: eventsList;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 .eventsList table, th, td {
