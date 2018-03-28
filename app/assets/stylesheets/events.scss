@@ -191,8 +191,12 @@ html, body {
     color: black;
 }
 
-.eventsList td a:hover{
+.eventsList td a:hover {
     color: darkgrey;
+}
+
+.eventsList td.inactive {
+    background-color: rgba(206, 206, 206, 0.5);
 }
 
 .newEventButton {
