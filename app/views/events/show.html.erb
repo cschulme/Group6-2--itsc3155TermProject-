@@ -26,5 +26,9 @@
         Tag: <%= @event.tag %><br>
         <br>
         <%= link_to 'Back to Events', events_path %>
+        <%= link_to'Delete', 
+                            event_path(event),
+                            method: :delete,
+                            data: { confirm: 'Are you sure?' } %>
     </div>
 </div>

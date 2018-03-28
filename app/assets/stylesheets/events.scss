@@ -17,10 +17,6 @@ html, body {
     background-size: cover;
 }
 
-a {
-    text_decoration: none;
-}
-
 .container {
     /* Dimensions of Container */
     height: 100%;
@@ -186,6 +182,10 @@ a {
 .eventsList td {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 5px;
+}
+
+.eventList td a {
+    text-decoration: none;
 }
 
 /* --- Overriding for Fromtastic Elements --- */
