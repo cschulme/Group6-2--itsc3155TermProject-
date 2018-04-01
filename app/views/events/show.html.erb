@@ -19,12 +19,18 @@
     </div>
     
     <div class="content">
-        Location: <%= @event.location %><br>
-        Information: <%= simple_format(@event.eventInformation) %><br>
-        Starting Time: <%= @event.startTime.strftime("%m/%d/%Y at %H:%M") %><br>
-        Ending Time: <%= @event.endTime.strftime("%m/%d/%Y at %H:%M") %><br>
-        Tag: <%= @event.tag %><br>
-        <br>
-        <%= link_to 'Back to Events', events_path %>
+        <div class="infoContainer">
+            <div class="labelBoxSmall">Location:</div> 
+            <div class="dataBoxSmall"><%= @event.location %></div>
+            <div class="labelBoxLarge">Information:</div>
+            <div class="dataBoxLarge"><%= simple_format(@event.eventInformation) %></div>
+            <div class="labelBoxSmall">Starting Time:</div>
+            <div class="dataBoxSmall"><%= @event.startTime.strftime("%m/%d/%Y at %I:%M %p") %></div>
+            <div class="labelBoxSmall">Ending Time:</div>
+            <div class="dataBoxSmall"><%= @event.endTime.strftime("%m/%d/%Y at %I:%M %p") %></div>
+            <div class="labelBoxSmall">Tag:</div>
+            <div class="dataBoxSmall"><%= @event.tag %></div>
+            <%= link_to 'Back to Events', events_path, { :class => "backButton" } %>
+        </div>
     </div>
 </div>

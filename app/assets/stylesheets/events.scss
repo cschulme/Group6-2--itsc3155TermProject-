@@ -220,3 +220,72 @@ html, body {
 .formtastic {
     font-family: 'Open Sans', sans-serif;
 }
+
+/* --- Show.html Styling --- */
+
+.infoContainer {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 4fr 1fr 1fr 1fr 0.8fr;
+    grid-template-areas:
+        "labelBoxSmall dataBoxSmall"
+        "labelBoxLarge dataBoxLarge"
+        "labelBoxSmall dataBoxSmall"
+        "labelBoxSmall dataBoxSmall"
+        "labelBoxSmall dataBoxSmall"
+        "backButton backButton";
+    grid-gap: 5px;
+}
+
+.labelBoxSmall {
+    grid-area: "labelBoxSmall";
+    
+    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+    color: white;
+    padding: 10px;
+    font-size: 2vmin;
+    text-align: center;
+}
+
+.labelBoxLarge {
+    grid-area: "labelBoxLarge";
+    
+    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+    color: white;
+    padding: 10px;
+    font-size: 2vmin;
+    text-align: center;
+}
+
+.dataBoxSmall {
+    grid-area: "dataBoxSmall";
+    
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    font-size: 2vmin;
+}
+
+.dataBoxLarge {
+    grid-area: "dataBoxLarge";
+    
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    font-size: 2vmin;
+}
+
+.backButton {
+    grid-area: "backButton";
+    background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
+    display: flex;
+    color: white;
+    font-size: 2.5vmin;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.backButton:hover {
+    background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
+}
