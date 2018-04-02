@@ -290,3 +290,19 @@ html, body {
 .backButton:hover {
     background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
 }
+
+.backButton2 {
+    height: 8%;
+    width: 100%;
+    background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
+    display: flex;
+    color: white;
+    font-size: 2.5vmin;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.backButton2:hover {
+    background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
+}
