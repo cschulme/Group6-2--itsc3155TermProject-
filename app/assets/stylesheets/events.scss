@@ -244,7 +244,7 @@ html, body {
     background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
     color: white;
     padding: 10px;
-    font-size: 2vmin;
+    font-size: 2.5vmin;
     text-align: center;
 }
 
@@ -254,16 +254,17 @@ html, body {
     background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
     color: white;
     padding: 10px;
-    font-size: 2vmin;
+    font-size: 2.5vmin;
     text-align: center;
 }
 
 .dataBoxSmall {
     grid-area: "dataBoxSmall";
     
+    overflow: auto;
     background-color: rgba(255, 255, 255, 0.5);
     padding: 10px;
-    font-size: 2vmin;
+    font-size: 2.5vmin;
 }
 
 .dataBoxLarge {
@@ -272,7 +273,7 @@ html, body {
     overflow-y: auto;
     background-color: rgba(255, 255, 255, 0.5);
     padding: 10px;
-    font-size: 2vmin;
+    font-size: 2.5vmin;
 }
 
 .backButton {

@@ -1,0 +1,18 @@
+[33mca479cd[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m HEAD@{0}: commit: Added styling to events/show.html.erb
+[33m3a00092[m HEAD@{1}: commit: Added AM/PM formatting for startTime and endTime for events/index.html.erb
+[33m7e883ec[m HEAD@{2}: commit: Added conditional classes to table cells with optional fields in events/index.html.erb
+[33m3f59bc1[m HEAD@{3}: commit: Added validation for events
+[33mc686d69[m HEAD@{4}: commit: Commit before Spring 2 Part 1
+[33m11dd107[m HEAD@{5}: commit: Added link to events on welcome/index.html (Will change once calendar view is built)
+[33mb552462[m HEAD@{6}: commit: Added hover text for options, fixed events routes
+[33m8515044[m HEAD@{7}: commit: Refined CSS styling on events index
+[33m2de7bb3[m HEAD@{8}: commit: Implemented event edit functionality
+[33mf2eb616[m HEAD@{9}: commit: Added show and delete functions for event
+[33m5c8310b[m HEAD@{10}: commit: Created view and index for events
+[33md4d0aae[m HEAD@{11}: commit: Refined schema for events
+[33mca63cfd[m HEAD@{12}: commit: Added formtastic gem, created form partial for events
+[33mfcb9d04[m HEAD@{13}: commit: Generate and run Events migration
+[33m118c531[m HEAD@{14}: commit: Create the new action and view for Events
+[33m619ceb6[m HEAD@{15}: commit: Set root view
+[33md977a24[m HEAD@{16}: commit: Built welcome index.html.erb
+[33m9940f2f[m HEAD@{17}: commit (initial): Starting commit
