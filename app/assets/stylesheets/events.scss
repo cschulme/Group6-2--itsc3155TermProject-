@@ -140,20 +140,6 @@ html, body {
     overflow: auto;
 }
 
-/* --- Index Container --- */
-.indexContainer {
-    grid-area: content;
-    background-color: rgba(255, 255, 255, 0.5);
-    
-    padding: 10px;
-    
-    display: grid;
-    grid-template-rows: 11fr 1fr;
-    grid-template-areas:
-        "eventsList"
-        "newEventButton";
-}
-
 /* --- Event Index Table --- */
 .eventsListContainer {
     grid-area: eventsList;
@@ -227,14 +213,14 @@ html, body {
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 4fr 1fr 1fr 1fr 0.8fr;
+    grid-template-rows: 1fr 4fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
         "labelBoxSmall dataBoxSmall"
         "labelBoxLarge dataBoxLarge"
         "labelBoxSmall dataBoxSmall"
         "labelBoxSmall dataBoxSmall"
         "labelBoxSmall dataBoxSmall"
-        "backButton backButton";
+        "labelBoxSmall dataBoxSmall";
     grid-gap: 5px;
 }
 
@@ -262,8 +248,8 @@ html, body {
     grid-area: "dataBoxSmall";
     
     overflow: auto;
+    padding: 5px;
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
     font-size: 2.5vmin;
 }
 
@@ -271,27 +257,14 @@ html, body {
     grid-area: "dataBoxLarge";
     
     overflow-y: auto;
+    padding: 5px;
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
     font-size: 2.5vmin;
 }
 
-.backButton {
-    grid-area: "backButton";
-    background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
-    display: flex;
-    color: white;
-    font-size: 2.5vmin;
-    text-decoration: none;
-    justify-content: center;
-    align-items: center;
-}
-
-.backButton:hover {
-    background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
-}
-
-.backButton2 {
+.basicButton {
+    grid-area: backButton;
+    margin-top: 5px;
     height: 8%;
     width: 100%;
     background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
@@ -303,6 +276,71 @@ html, body {
     align-items: center;
 }
 
-.backButton2:hover {
+.basicButton:hover {
     background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
+}
+
+.eventFormContainer {
+    grid-area: content;
+    
+    height: 100%;
+    width: 100%;
+}
+
+.eventForm {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 1fr 4fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "labelBoxSmall dataBoxSmall"
+        "labelBoxSmall dataBoxSmall"
+        "labelBoxLarge dataBoxLarge"
+        "labelBoxSmall dataBoxSmall"
+        "labelBoxSmall dataBoxSmall"
+        "labelBoxSmall dataBoxSmall"
+        "labelBoxSmall dataBoxSmall";
+    grid-gap: 5px;
+}
+
+.eventForm input[type=text] {
+    width: calc(100% - 10px);
+    height: calc(100% - 5px);
+    border: none;
+    font-size: 2.5vmin;
+    padding-left: 5px;
+}
+
+.eventForm textarea {
+    padding-left: 5px;
+    width: calc(100% - 12px);
+    height: calc(100% - 11px);
+    resize: none;
+    border: none;
+    font-size: 2.5vmin;
+}
+
+.eventForm select {
+    display: inline-block;
+    width: 31%;
+    height: 100%;
+    font-size: 2.5vmin;
+    background-color: white;
+}
+
+.eventForm input[type=submit], .eventForm input[type=reset] {
+    color: white;
+    display: inline-block;
+    font-size: 2.5vmin;
+    float: left;
+    border: none;
+    background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
+    padding: 5px;
+    width: calc(50% - 5px);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.eventForm input[type=submit] {
+    margin-right: 10px;
 }

@@ -18,13 +18,14 @@
         </div>
     </div>
     
-    <div class="indexContainer">
+    <div class="content">
         <div class="eventsListContainer">
             <table class="eventsList">
                 <tr>
                     <th>Title</th>
                     <th>Location</th>
                     <th>Information</th>
+                    <th>Date</th>
                     <th>Starts</th>
                     <th>Ends</th>
                     <th>Tags</th>
@@ -36,8 +37,9 @@
                         <td><%= event.title %></td>
                         <td class="<%= "inactive" if event.location.blank? %>"><%= event.location %></td>
                         <td class="<%= "inactive" if event.eventInformation.blank? %>"><%= truncate(event.eventInformation, length: 80, separator: ' ', omission: '... (continued)') %></td>
-                        <td><%= event.startTime.strftime("%m/%d/%Y at %I:%M %p") %></td>
-                        <td><%= event.endTime.strftime("%m/%d/%Y at %I:%M %p") %></td>
+                        <td><%= event.eventDate.strftime("%m/%d/%Y") %></td>
+                        <td><%= event.startTime.strftime("%I:%M %p") %></td>
+                        <td><%= event.endTime.strftime("%I:%M %p") %></td>
                         <td class="<%= "inactive" if event.tag.blank? %>"><%= event.tag %></td>
                         <td><%= link_to'<i class="fas fa-eye"></i>'.html_safe, event_path(event), :title => "Show Event" %>
                             <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_event_path(event), :title => "Edit Event" %>
@@ -53,7 +55,7 @@
         </div>
         
         <div class="eventsButtons">
-            <%= link_to 'New Event', new_event_path, { :class => "newEventButton" } %>
+            <%= link_to 'New Event', new_event_path, { :class => "basicButton" } %>
         </div>
     </div>
 </div>

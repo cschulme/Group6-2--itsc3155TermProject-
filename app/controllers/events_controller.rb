@@ -45,5 +45,5 @@ end
 
 private
     def event_params
-       params.require(:event).permit(:title, :location, :eventInformation, :startTime, :endTime, :tag) 
+       params.require(:event).permit(:title, :location, :eventInformation, :eventDate, :startTime, :endTime, :tag) 
     end

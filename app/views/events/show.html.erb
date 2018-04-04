@@ -24,13 +24,15 @@
             <div class="dataBoxSmall"><%= @event.location %></div>
             <div class="labelBoxLarge">Information:</div>
             <div class="dataBoxLarge"><%= simple_format(@event.eventInformation) %></div>
+            <div class="labelBoxSmall">Date</div>
+            <div class="dataBoxSmall"><%= @event.eventDate.strftime("%m/%d/%Y") %></div>
             <div class="labelBoxSmall">Starting Time:</div>
-            <div class="dataBoxSmall"><%= @event.startTime.strftime("%m/%d/%Y at %I:%M %p") %></div>
+            <div class="dataBoxSmall"><%= @event.startTime.strftime("%I:%M %p") %></div>
             <div class="labelBoxSmall">Ending Time:</div>
-            <div class="dataBoxSmall"><%= @event.endTime.strftime("%m/%d/%Y at %I:%M %p") %></div>
+            <div class="dataBoxSmall"><%= @event.endTime.strftime("%I:%M %p") %></div>
             <div class="labelBoxSmall">Tag:</div>
             <div class="dataBoxSmall"><%= @event.tag %></div>
-            <%= link_to 'Back to Events', events_path, { :class => "backButton" } %>
         </div>
+        <%= link_to 'Back to Events', events_path, { :class => "basicButton" } %>
     </div>
 </div>

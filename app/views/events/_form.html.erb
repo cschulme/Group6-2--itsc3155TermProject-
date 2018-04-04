@@ -1,13 +1,55 @@
-<%= semantic_form_for @event do |f| %>
-    <%= f.inputs do %>
-        <%= f.input :title %>
-        <%= f.input :location %>
-        <%= f.input :eventInformation, :label => "Event Information" %>
-        <%= f.input :startTime, :label => "Starting Time", :as => :datetime_select %>
-        <%= f.input :endTime, :label => "Ending Time", :as => :datetime_select %>
-    <% end %>
-    <%= f.actions do %>
-        <%= f.action :submit, :as => :button %>
-        <%= f.action :reset, :as => :button %>
-    <% end %>
+<%= form_for @event do |f| %>
+    <div class="eventForm">
+        <div class="labelBoxSmall">
+            Title:
+        </div>
+        <div class="dataBoxSmall">
+            <%= f.text_field :title, placeholder: "What is your event's title?" %>
+        </div>
+        <div class="labelBoxSmall">
+            Location:
+        </div>
+        <div class="dataBoxSmall">
+            <%= f.text_field :location, placeholder: "Where, if anywhere, is your event located?" %>
+        </div>
+        <div class="labelBoxLarge">
+            Information:
+        </div>
+        <div class="dataBoxLarge">
+            <%= f.text_area :eventInformation, placeholder: "Are there any notes you'd like to include with your event?" %>
+        </div>
+        <div class="labelBoxSmall">
+            Date:
+        </div>
+        <div class="dataBoxSmall">
+            <%= f.date_select :eventDate, :date_separator => " / ", :order => [:month, :day, :year], :start_year => 2018, :end_year => 2030 %>
+        </div>
+        <div class="labelBoxSmall">
+            Starting Time:
+        </div>
+        <div class="dataBoxSmall">
+            <%= f.time_select :startTime, :ampm => true, :minute_step => 15 %>
+        </div>
+        <div class="labelBoxSmall">
+            Ending Time:
+        </div>
+        <div class="dataBoxSmall">
+            <%= f.time_select :endTime, :ampm => true, :minute_step => 15 %>
+        </div>
+        <div class="labelBoxSmall">
+            Tag:
+        </div>
+        <div class="dataBoxSmall">
+            Tag Input PH
+        </div>
+        <div class="labelBoxSmall">
+            Form Options:
+        </div>
+        <div class="dataBoxSmall">
+            <%= f.submit :class => "submitButton" %>
+            <%= submit_tag "Reset Form", :class => "resetButton", :type => "reset" %>
+        </div>
+    </div>
 <% end %>
+
+<%= link_to 'Back to Events', events_path, { :class => "basicButton" } %>
