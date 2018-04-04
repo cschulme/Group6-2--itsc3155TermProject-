@@ -7,9 +7,9 @@
     <div class="nav">
         <a href="/../welcome/index.html">Home</a>
         <a href="#">Calendar</a>
-        <a href="#">Events</a>
+        <%= link_to 'Events', events_path %>
         <a href="#">Team</a>
-        <a href="#">About</a>
+        <%= link_to 'Tags', tags_path %>
         <div class="search-container">
             <form action="/action_page.php">
                 <input type="text" placeholder="Search events..." name="search">
