@@ -19,6 +19,24 @@
     </div>
     
     <div class="content">
-        
+        <table class="tagsList">
+            <tr>
+                <th>Tag Name</th>
+                <th>Options</th>
+            </tr>
+            <% @tags.each do |tag| %>
+                <tr>
+                    <td><%= tag.tagName %></td>
+                    <td><%= link_to'<i class="fas fa-eye"></i>'.html_safe, tag_path(tag), :title => "Show Tag" %>
+                        <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_tag_path(tag), :title => "Edit Tag" %>
+                        <%= link_to'<i class="fas fa-trash-alt"></i>'.html_safe, 
+                                                                        tag_path(tag),
+                                                                        method: :delete,
+                                                                        data: { confirm: 'Are you sure?' },
+                                                                        :title => "Delete Tag" %>
+                    </td>
+                </tr>
+            <% end %>
+        </table>
     </div>
 </div>
