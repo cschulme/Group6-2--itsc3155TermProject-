@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-    validates :title, :startTime, :endTime, presence: true
+    validates :title, :eventDate, :startTime, :endTime, presence: true
     validate :checkStartAndEndTime
     
     def checkStartAndEndTime
