@@ -1,0 +1,30 @@
+<div class="backgroundScene"></div>
+<div class="container">
+    <div class="header">
+        <h1><%= @tag.tagName %></h1>
+    </div>
+    
+    <div class="nav">
+        <a href="/../welcome/index.html">Home</a>
+        <a href="#">Calendar</a>
+        <%= link_to 'Events', events_path %>
+        <%= link_to 'Tags', tags_path %>
+        <a href="#">Team</a>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search events..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="infoContainer">
+            <div class="labelBoxLarge">Description:</div> 
+            <div class="dataBoxLarge"><%= @tag.tagDescription %></div>
+            <div class="labelBoxLarge">Associated Events:</div>
+            <div class="dataBoxLarge">Events PH</div>
+        </div>
+        <%= link_to 'Back to Tags', tags_path, { :class => "basicButton" } %>
+    </div>
+</div>

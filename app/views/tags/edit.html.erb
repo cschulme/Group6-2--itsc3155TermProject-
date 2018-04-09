@@ -1,0 +1,38 @@
+<div class="backgroundScene"></div>
+<div class="container">
+    <div class="header">
+        <h1>Editing: <%= @tag.tagName %></h1>
+    </div>
+    
+    <div class="nav">
+        <a href="/../welcome/index.html">Home</a>
+        <a href="#">Calendar</a>
+        <%= link_to 'Events', events_path %>
+        <%= link_to 'Tags', tags_path %>
+        <a href="#">Team</a>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search events..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="content">
+        <% if @tag.errors.any? %>
+            <div id="error_explanation">
+                <h2>
+                    <%= pluralize(@tag.errors.count, "error") %> prohibited
+                    this tag from being saved:
+                </h2>
+                <ul>
+                    <% @tag.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+        
+        <%= render 'form' %>
+    </div>
+</div>

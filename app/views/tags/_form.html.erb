@@ -1,0 +1,25 @@
+<%= form_for @tag do |f| %>
+    <div class="tagForm">
+        <div class="labelBoxSmall">
+            Tag Name:
+        </div>
+        <div class="dataBoxSmall">
+            <%= f.text_field :tagName, placeholder: "Give a useful label for your events." %>
+        </div>
+        <div class="labelBoxLarge">
+            Description:
+        </div>
+        <div class="dataBoxLarge">
+            <%= f.text_area :tagDescription, placeholder: "Add an (optional) description for your tag." %>
+        </div>
+        <div class="labelBoxSmall">
+            Form Options:
+        </div>
+        <div class="dataBoxSmall">
+            <%= f.submit :class => "submitButton" %>
+            <%= submit_tag "Reset Form", :class => "resetButton", :type => "reset" %>
+        </div>
+    </div>
+<% end %>
+
+<%= link_to 'Back to Tags', tags_path, { :class => "basicButton" } %>

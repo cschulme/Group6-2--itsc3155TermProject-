@@ -1,5 +1,6 @@
 class Event < ApplicationRecord
     validates :title, :eventDate, :startTime, :endTime, presence: true
+    validates :title, length: { maximum: 50 }
     validate :checkStartAndEndTime
     
     def checkStartAndEndTime
