@@ -45,5 +45,5 @@ end
 
 private
     def tag_params
-       params.require(:tag).permit(:tagName) 
+       params.require(:tag).permit(:tagName, :tagDescription) 
     end

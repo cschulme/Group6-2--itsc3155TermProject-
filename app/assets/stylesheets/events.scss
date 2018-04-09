@@ -143,7 +143,6 @@ html, body {
 
 /* --- Event Index Table --- */
 .eventsListContainer {
-    grid-area: eventsList;
     overflow-y: auto;
 }
 
@@ -187,7 +186,6 @@ html, body {
 }
 
 .newEventButton {
-    grid-area: newEventButton;
     background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
     display: flex;
     color: white;
@@ -201,11 +199,6 @@ html, body {
 
 .newEventButton:hover {
     background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
-}
-
-/* --- Overriding for Fromtastic Elements --- */
-.formtastic {
-    font-family: 'Open Sans', sans-serif;
 }
 
 /* --- Show.html Styling --- */

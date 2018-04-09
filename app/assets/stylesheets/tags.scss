@@ -140,3 +140,108 @@ html, body {
     padding: 10px;
     overflow: auto;
 }
+
+/* --- Tag Index Table --- */
+.tagsListContainer {
+    overflow-y: auto;
+}
+
+.tagsList table, th, td {
+    border: none;
+    font-size: 2vmin;
+}
+
+.tagsList {
+    width: 100%;
+}
+
+.tagsList table {
+    height: 100%;
+}
+
+.tagsList th {
+    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+    font-size: 2.5vmin;
+    color: white;
+    padding: 5px;
+}
+
+.tagsList td {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px;
+    text-align: center;
+}
+
+.tagsList td a {
+    text-decoration: none;
+    color: black;
+}
+
+.tagsList td a:hover {
+    color: darkgrey;
+}
+
+.tagsList td.inactive {
+    background-color: rgba(206, 206, 206, 0.5);
+}
+
+/* --- Tag Form --- */
+.tagFormContainer {
+    grid-area: content;
+    
+    height: 100%;
+    width: 100%;
+}
+
+.tagForm {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 9fr;
+    grid-template-areas:
+        "labelBoxSmall dataBoxSmall"
+        "labelBoxLarge dataBoxLarge";
+    grid-gap: 5px;
+}
+
+.tagForm input[type=text] {
+    width: calc(100% - 10px);
+    height: calc(100% - 5px);
+    border: none;
+    font-size: 2.5vmin;
+    padding-left: 5px;
+}
+
+.tagForm textarea {
+    padding-left: 5px;
+    width: calc(100% - 12px);
+    height: calc(100% - 11px);
+    resize: none;
+    border: none;
+    font-size: 2.5vmin;
+}
+
+.tagForm select {
+    display: inline-block;
+    width: 31%;
+    height: 100%;
+    font-size: 2.5vmin;
+    background-color: white;
+}
+
+.tagForm input[type=submit], .tagForm input[type=reset] {
+    color: white;
+    display: inline-block;
+    font-size: 2.5vmin;
+    float: left;
+    border: none;
+    background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
+    padding: 5px;
+    width: calc(50% - 5px);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tagForm input[type=submit] {
+    margin-right: 10px;
+}
