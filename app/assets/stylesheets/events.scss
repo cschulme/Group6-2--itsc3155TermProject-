@@ -241,6 +241,10 @@ html, body {
 .dataBoxSmall {
     grid-area: "dataBoxSmall";
     
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
     overflow: auto;
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -315,9 +319,12 @@ html, body {
 }
 
 .eventForm select {
-    display: inline-block;
+    display: flex;
+    flex-grow: 1;
+    /*
     width: 31%;
     height: 100%;
+    */
     font-size: 2.5vmin;
     background-color: white;
 }
