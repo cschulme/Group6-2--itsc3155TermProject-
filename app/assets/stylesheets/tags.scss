@@ -78,6 +78,7 @@ html, body {
 
 .nav a:hover {
     background-color: rgba(78, 167, 250, 0.719);
+    transition: 0.3s;
 }
 
 .nav a.active {
@@ -111,7 +112,7 @@ html, body {
     
     .nav .search-container button:hover {
         background: rgba(209, 209, 209, 0.7);
-        transition: 0.6s;
+        transition: 0.3s;
     }
       
     @media screen and (max-width: 600px) {
