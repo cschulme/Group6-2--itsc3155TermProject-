@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     end
     
     def create
-        @tag = Tag.find(params[:tag_id])
+        @tag = Tag.find(params[:event][:tag_id])
         @event = @tag.events.create(event_params)
        
         if @event.save
@@ -46,5 +46,5 @@ end
 
 private
     def event_params
-       params.require(:event).permit(:title, :location, :eventInformation, :eventDate, :startTime, :endTime, :tag) 
+       params.require(:event).permit(:title, :location, :eventInformation, :eventDate, :startTime, :endTime)
     end

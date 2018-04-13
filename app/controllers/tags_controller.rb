@@ -39,7 +39,7 @@ class TagsController < ApplicationController
         @tag = Tag.find(params[:id])
         @tag.destroy
         
-        redirect_to tag_path
+        redirect_to tags_path
     end
 end
 

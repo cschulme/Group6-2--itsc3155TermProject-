@@ -40,7 +40,7 @@
             Tag:
         </div>
         <div class="dataBoxSmall">
-            <%= f.collection_select :tag, :tag_id, Tag.all, :tagName %>
+            <%= f.collection_select :tag_id, Tag.all, :id, :tagName %>
         </div>
         <div class="labelBoxSmall">
             Form Options:

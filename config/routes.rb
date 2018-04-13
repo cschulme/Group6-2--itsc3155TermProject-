@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :tags do
     resources :events
   end
+  
   resources :events
 
   root 'welcome#index'

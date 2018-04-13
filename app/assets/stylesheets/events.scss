@@ -344,6 +344,11 @@ html, body {
     cursor: pointer;
 }
 
+.eventForm input[type=submit]:hover, .eventForm input[type=reset]:hover {
+    background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
+    transition: 0.3s;
+}
+
 .eventForm input[type=submit] {
     margin-right: 10px;
 }
