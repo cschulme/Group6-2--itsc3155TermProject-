@@ -12,7 +12,8 @@ class EventsController < ApplicationController
     end
     
     def create
-        @event = Event.new(event_params)
+        @tag = Tag.find(params[:tag_id])
+        @event = @tag.events.create(event_params)
        
         if @event.save
             redirect_to @event
