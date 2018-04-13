@@ -40,7 +40,7 @@
             Tag:
         </div>
         <div class="dataBoxSmall">
-            Tag Input PH
+            <%= f.collection_select :tag, :tag_id, Tag.all, :tagName %>
         </div>
         <div class="labelBoxSmall">
             Form Options:

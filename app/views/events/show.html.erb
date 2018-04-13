@@ -31,7 +31,7 @@
             <div class="labelBoxSmall">Ending Time:</div>
             <div class="dataBoxSmall"><%= @event.endTime.strftime("%I:%M %p") %></div>
             <div class="labelBoxSmall">Tag:</div>
-            <div class="dataBoxSmall"><%= @event.tag %></div>
+            <div class="dataBoxSmall"><%= @event.tags.tagName %></div>
         </div>
         <%= link_to 'Back to Events', events_path, { :class => "basicButton" } %>
     </div>

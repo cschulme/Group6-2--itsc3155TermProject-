@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
+  resources :tags do
+    resources :events
+  end
   resources :events
-  resources :tags
 
   root 'welcome#index'
   
