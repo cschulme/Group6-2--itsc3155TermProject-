@@ -4,10 +4,10 @@ class Event < ApplicationRecord
   validate :validStartAndEndTime
   
   def validStartAndEndTime
-    if :startTime > :endTime
-        self.errors[:base] << "Your staring time must be before your ending time!"
-    else
+    if self.startTime <= self.endTime
         return true
+    else
+        self.errors[:base] << "Your staring time must be before your ending time!"
     end
   end
 end

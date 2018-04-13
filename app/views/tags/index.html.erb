@@ -24,12 +24,26 @@
                 <tr>
                     <th>Tag Name</th>
                     <th>Description</th>
+                    <th>Events</th>
                     <th>Options</th>
                 </tr>
                 <% @tags.each do |tag| %>
                     <tr>
                         <td><%= tag.tagName %></td>
                         <td class="<%= "inactive" if tag.description.blank? %>"><%= truncate(tag.description, length: 80, separator: ' ', omission: '... (continued)') %></td>
+                        <td>
+                            <% @numOfEvents = 0 %>
+                            
+                            <% if tag.events.blank? %>
+                                <% @numOfEvents = 0 %>
+                            <% else %>
+                                <% tag.events.each do %>
+                                    <% @numOfEvents += 1 %>
+                                <% end %>
+                            <% end %>
+                            
+                            <%= @numOfEvents %>
+                        </td>
                         <td><%= link_to'<i class="fas fa-eye"></i>'.html_safe, tag_path(tag), :title => "Show Tag" %>
                             <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_tag_path(tag), :title => "Edit Tag" %>
                             <%= link_to'<i class="fas fa-trash-alt"></i>'.html_safe, 

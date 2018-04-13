@@ -246,6 +246,15 @@ html, body {
     cursor: pointer;
 }
 
+.tagForm input[type=submit]:hover, .tagForm input[type=reset]:hover {
+    background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
+    transition: 0.3s;
+}
+
 .tagForm input[type=submit] {
     margin-right: 10px;
+}
+
+.tagsButtons {
+    height: 100%;
 }
