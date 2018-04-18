@@ -1,0 +1,2 @@
+class CalendarView < ApplicationRecord
+end

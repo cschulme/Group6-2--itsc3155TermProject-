@@ -1,4 +1,4 @@
-// Place all the styles related to the tags controller here.
+// Place all the styles related to the calendar_view controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html, body {
@@ -135,126 +135,67 @@ html, body {
         }
     }
     
-/* --- Content --- */
-.content {
+/* --- Calendar Content --- */
+.calendarContent {
     /* Position in container grid */
     grid-area: content;
     background-color: rgba(255, 255, 255, 0.5);
-    
-    padding: 10px;
     overflow: auto;
+    
+    /* Layout grid for the calendar content */
+    display: grid;
+    grid-template-columns: 2fr 9fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "sidebar main";
 }
 
-/* --- Tag Index Table --- */
-.tagsListContainer {
-    overflow-y: auto;
+/* --- Sidebar --- */
+
+.sidebar {
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.2), 10px 0px 20px rgba(54, 54, 54, 0.2);
 }
 
-.tagsList table, th, td {
-    border: none;
-    font-size: 2vmin;
-}
-
-.tagsList {
-    width: 100%;
-}
-
-.tagsList table {
-    height: 100%;
-}
-
-.tagsList th {
-    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+.sidebar div.sidebarMainBox {
+    padding: 10px;
     font-size: 2.5vmin;
     color: white;
-    padding: 5px;
-}
-
-.tagsList td {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 5px;
     text-align: center;
+    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
 }
 
-.tagsList td a {
+.sidebar div.sidebarSubBox {
+    padding: 10px;
+    font-size: 2vmin;
+
+}
+
+/* --- Main --- */
+
+.main {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+        "monthHeader"
+        "calendarBox";
+        
+    padding: 10px;
+}
+
+.main div.monthHeader {
+    font-size: 2vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.monthHeader a {
     text-decoration: none;
     color: black;
 }
 
-.tagsList td a:hover {
+.monthHeader a:hover {
     color: rgb(114, 114, 114);
-}
-
-.tagsList td.inactive {
-    background-color: rgba(206, 206, 206, 0.5);
-}
-
-/* --- Tag Form --- */
-.tagFormContainer {
-    grid-area: content;
-    
-    height: 100%;
-    width: 100%;
-}
-
-.tagForm {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 9fr;
-    grid-template-areas:
-        "labelBoxSmall dataBoxSmall"
-        "labelBoxLarge dataBoxLarge";
-    grid-gap: 5px;
-}
-
-.tagForm input[type=text] {
-    width: calc(100% - 10px);
-    height: calc(100% - 5px);
-    border: none;
-    font-size: 2.5vmin;
-    padding-left: 5px;
-}
-
-.tagForm textarea {
-    padding-left: 5px;
-    width: calc(100% - 12px);
-    height: calc(100% - 11px);
-    resize: none;
-    border: none;
-    font-size: 2.5vmin;
-}
-
-.tagForm select {
-    display: inline-block;
-    width: 31%;
-    height: 100%;
-    font-size: 2.5vmin;
-    background-color: white;
-}
-
-.tagForm input[type=submit], .tagForm input[type=reset] {
-    color: white;
-    display: inline-block;
-    font-size: 2.5vmin;
-    float: left;
-    border: none;
-    background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
-    padding: 5px;
-    width: calc(50% - 5px);
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.tagForm input[type=submit]:hover, .tagForm input[type=reset]:hover {
-    background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
-    transition: 0.3s;
-}
-
-.tagForm input[type=submit] {
-    margin-right: 10px;
-}
-
-.tagsButtons {
-    height: 100%;
 }

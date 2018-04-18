@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   end
   
   resources :events
+  
+  resources :calendar_views do
+    get :previousMonth
+    get :nextMonth
+  end
 
   root 'welcome#index'
   

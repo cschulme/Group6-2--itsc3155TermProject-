@@ -6,6 +6,69 @@
     
     <div class="nav">
         <a href="/../welcome/index.html">Home</a>
+        <%= link_to 'Calendar', calendars_views_path %>
+        <%= link_to 'Events', events_path %>
+        <%= link_to 'Tags', tags_path, { :class => "active" } %>
+        <a href="#">Team</a>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search events..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="tagsListContainer">
+            <table class="tagsList">
+                <tr>
+                    <th>Tag Name</th>
+                    <th>Description</th>
+                    <th>Events</th>
+                    <th>Options</th>
+                </tr>
+                <% @tags.each do |tag| %>
+                    <tr>
+                        <td><%= tag.tagName %></td>
+                        <td class="<%= "inactive" if tag.description.blank? %>"><%= truncate(tag.description, length: 80, separator: ' ', omission: '... (continued)') %></td>
+                        <td>
+                            <% @numOfEvents = 0 %>
+                            
+                            <% if tag.events.blank? %>
+                                <% @numOfEvents = 0 %>
+                            <% else %>
+                                <% tag.events.each do %>
+                                    <% @numOfEvents += 1 %>
+                                <% end %>
+                            <% end %>
+                            
+                            <%= @numOfEvents %>
+                        </td>
+                        <td><%= link_to'<i class="fas fa-eye"></i>'.html_safe, tag_path(tag), :title => "Show Tag" %>
+                            <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_tag_path(tag), :title => "Edit Tag" %>
+                            <%= link_to'<i class="fas fa-trash-alt"></i>'.html_safe, 
+                                                                            tag_path(tag),
+                                                                            method: :delete,
+                                                                            data: { confirm: 'Are you sure?' },
+                                                                            :title => "Delete Tag" %>
+                        </td>
+                    </tr>
+                <% end %>
+            </table>
+        </div>
+        
+        <div class="tagsButtons">
+            <%= link_to 'New Tag', new_tag_path, { :class => "basicButton" } %>
+        </div>
+    </div>
+</div><div class="backgroundScene"></div>
+<div class="container">
+    <div class="header">
+        <h1>Your Tags</h1>
+    </div>
+    
+    <div class="nav">
+        <a href="/../welcome/index.html">Home</a>
         <a href="#">Calendar</a>
         <%= link_to 'Events', events_path %>
         <%= link_to 'Tags', tags_path, { :class => "active" } %>

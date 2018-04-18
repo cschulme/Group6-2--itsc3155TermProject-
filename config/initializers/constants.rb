@@ -1,0 +1,1 @@
+INIT_DATE = Date.today
