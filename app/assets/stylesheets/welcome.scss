@@ -82,7 +82,8 @@ html, body {
 }
 
 .welcomeButton:hover {
-    background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
+    background: linear-gradient(to bottom right, rgb(34, 111, 184), rgb(102, 180, 252));
+    transition: 0.3s;
     transition: 0.3s;
 }
 

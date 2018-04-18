@@ -89,6 +89,11 @@ html, body {
     color: white;
 }
 
+.nav a.active:hover {
+    background: linear-gradient(to bottom right, rgb(34, 111, 184), rgb(102, 180, 252));
+    transition: 0.3s;
+}
+
     /* --- Navigation: Search Bar --- */
 
     .nav .search-container {
@@ -165,6 +170,23 @@ html, body {
     background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
 }
 
+.sidebar a.sidebarMainBoxButton {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+    
+    font-size: 2.5vmin;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a.sidebarMainBoxButton:hover {
+    background: linear-gradient(to bottom right, rgba(185, 24, 92, 0.767), rgba(236, 56, 131, 0.767));
+    transition: 0.3s;
+}
+
 .sidebar div.sidebarSubBox {
     padding: 10px;
     font-size: 2vmin;
@@ -198,4 +220,8 @@ html, body {
 
 .monthHeader a:hover {
     color: rgb(114, 114, 114);
+}
+
+.main div.calendarBox {
+    
 }

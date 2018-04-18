@@ -1,3 +1,52 @@
-<%= link_to'Previous Month', calendar_view_previousMonth_path(:calendar_view_id), :title => "Previous Month" %>
-<h1><%= @dateInUse %></h1>
-<%= link_to'Next Month', calendar_view_nextMonth_path(:calendar_view_id), :title => "Next Month" %>
+<div class="backgroundScene"></div>
+<div class="container">
+    <div class="header">
+        <h1>Your Calendar</h1>
+    </div>
+    
+    <div class="nav">
+        <a href="/../welcome/index.html">Home</a>
+        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "active" } %>
+        <%= link_to 'Events', events_path %>
+        <%= link_to 'Tags', tags_path %>
+        <a href="/../welcome/team.html">Team</a>
+        <div class="search-container">
+            <form action="/action_page.php">
+                <input type="text" placeholder="Search events..." name="search">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="calendarContent">
+        <div class="sidebar">
+            <div class="sidebarMainBox">
+                Jump to...
+            </div>
+            <div class="sidebarSubBox">
+                Month<br>
+                Year
+            </div>
+                <%= link_to 'Go to Current Month', calendar_view_thisMonth_path(:calendar_view_id), { :class => "sidebarMainBoxButton" } %>
+        </div>
+        
+        <div class="main">
+            <div class="monthHeader">
+                <h2>
+                    <%= link_to'<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, calendar_view_previousMonth_path(:calendar_view_id), :title => "Previous Month" %>&nbsp;&nbsp;
+                </h2>
+                <h1>
+                    <%= @dateInUse.strftime("%B, %Y") %>
+                </h1>
+                <h2>
+                    &nbsp;&nbsp;<%= link_to'<i class="fa fa-arrow-right" aria-hidden="true"></i>'.html_safe, calendar_view_nextMonth_path(:calendar_view_id), :title => "Next Month" %>
+                </h2>
+            </div>
+            
+            <div class="calendarBox">
+                <%= render 'calendarLayout' %>
+            </div>
+        </div>
+    </div>
+</div>
+

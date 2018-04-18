@@ -86,6 +86,11 @@ html, body {
     color: white;
 }
 
+.nav a.active:hover {
+    background: linear-gradient(to bottom right, rgb(34, 111, 184), rgb(102, 180, 252));
+    transition: 0.3s;
+}
+
     /* --- Navigation: Search Bar --- */
 
     .nav .search-container {
@@ -276,7 +281,8 @@ html, body {
 }
 
 .basicButton:hover {
-    background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
+    background: linear-gradient(to bottom right, rgb(34, 111, 184), rgb(102, 180, 252));
+    transition: 0.3s;
     transition: 0.3s;
 }
 
@@ -345,7 +351,8 @@ html, body {
 }
 
 .eventForm input[type=submit]:hover, .eventForm input[type=reset]:hover {
-    background: linear-gradient(to top left, rgb(102, 180, 252), rgb(102, 180, 252));
+    background: linear-gradient(to bottom right, rgb(34, 111, 184), rgb(102, 180, 252));
+    transition: 0.3s;
     transition: 0.3s;
 }
 
