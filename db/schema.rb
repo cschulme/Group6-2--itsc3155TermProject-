@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418001023) do
+ActiveRecord::Schema.define(version: 20180418002417) do
 
   create_table "calendar_views", force: :cascade do |t|
     t.date "dateInUse"
