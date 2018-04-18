@@ -198,7 +198,7 @@ html, body {
 .main {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr 6fr;
     grid-template-areas: 
         "monthHeader"
         "calendarBox";
@@ -223,5 +223,31 @@ html, body {
 }
 
 .main div.calendarBox {
-    
+    overflow-y: auto;
+}
+
+.calendarLayout {
+    width: 100%;
+}
+
+.calendarLayout table {
+    height: 100%;
+}
+
+.calendarLayout th {
+    font-size: 2.5vmin;
+    width: calc(100% / 7);
+    height: 10%;
+    color: white;
+    background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
+}
+
+.calendarLayout td {
+    font-size: 2.5vmin;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.calendarLayout td.inactive {
+    background-color: rgba(132, 132, 132, 0.5)
 }

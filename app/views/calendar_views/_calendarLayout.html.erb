@@ -1,0 +1,46 @@
+<!-- Declare variables -->
+<% activeMonth = @dateInUse.month %>
+<% activeYear = @dateInUse.year %>
+<% firstDate = Date.parse('1-'+activeMonth.to_s+"-"+activeYear.to_s) %>
+<% numOfDaysInMonth = Time.days_in_month(activeMonth, activeYear) %>
+<% case firstDate.cwday %>
+<% when 1..6 %>
+<%     startingPos = firstDate.cwday + 1 %>
+<% else %>
+<%     startingPos = 1 %>
+<% end %>
+<% dayNum = 1 %>
+
+<table class="calendarLayout">
+    <tr>
+        <th>S</th>
+        <th>M</th>
+        <th>T</th>
+        <th>W</th>
+        <th>T</th>
+        <th>F</th>
+        <th>S</th>
+    </tr>
+    <tr>
+        <% for i in 1..7 %>
+            <% if i < startingPos %>
+                <td class="inactive"></td>
+            <% else %>
+                <td><%= dayNum %></td>
+                <% dayNum += 1 %>
+            <% end %>
+        <% end %>
+    </tr>
+    <% for week in 2..6 %>
+        <tr>
+            <% for day in 1..7 %>
+                <% if dayNum <= numOfDaysInMonth %>
+                    <td><%= dayNum %></td>
+                    <% dayNum += 1 %>
+                <% else %>
+                    <td class="inactive"></td>
+                <% end %>
+            <% end %>
+        </tr>
+    <% end %>
+</table>
