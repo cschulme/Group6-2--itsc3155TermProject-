@@ -1,0 +1,42 @@
+<div class="backgroundScene"></div>
+<div class="container">
+    <div class="header">
+        <h1>Your Guide to Your Calendar</h1>
+    </div>
+    
+    <div class="nav">
+        <a href="/../welcome/index.html">Home</a>
+        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id) %>
+        <%= link_to 'Events', events_path %>
+        <%= link_to 'Tags', tags_path %>
+        <a href="/../welcome/team.html">Team</a>
+        <a href="/../welcome/help.html" class="active">Help</a>
+    </div>
+    
+    <div class="helpContent">
+        <h1>Introduction</h1>
+        <p>
+            Welcome, and thank you for using the Calendar App! &nbsp;We built this web app to allow you to easily organize your life.
+        </p>
+        <h1>Your Events</h1>
+        <p>
+            
+        </p>
+        <h1>Your Tags</h1>
+        <p>
+            Tags are a way to categorize your events, allowing you to group them and easily see the ones relevant to a certain aspect of your life.&nbsp;
+            Every event belongs to a tag. &nbsp;By default, an event is assigned to the "General" tag. &nbsp;However, you can create as many tags as you'd
+            like, be it a "Family" tag, a "Work" tag, or even a "Conclave of Cat Lovers" tag!
+        </p>
+        <p>
+            When you create an event, all tags that you have made, along with the "General" tag, are selectable for you to assign your event to. &nbsp;
+            Let's say you accidentally assigned your mother's birthday to the "Work" tag -- while I'm sure there are some of you who may see no issue with that,
+            you can easily change that event to the "Family" tag by editing your event and selecting the right tag.
+        </p>
+        <p>
+            Maybe you've got a tag on your account that's no longer relevant to you? &nbsp;Simply delete the tag, and all associated events will be automatically
+            moved to the "General" tag for you to either leave be or go in and reassign to different tags.
+        </p>
+        <h1>Your Calendar</h1>
+        </div>
+</div>

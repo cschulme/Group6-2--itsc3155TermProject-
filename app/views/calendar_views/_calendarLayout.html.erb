@@ -35,7 +35,10 @@
                     
                     <% numOfEvents = Event.where(:eventDate => dayHolder).count %>
                     <% if numOfEvents != 0 %>
-                        <%= link_to"Events: #{ Event.where(:eventDate => dayHolder).count }&nbsp;<i class='fas fa-eye'></i>".html_safe, calendar_view_path(:calendar_view_id, day: dayHolder), :class => "dayInfo", :title => "View Events" %>
+                        <%= link_to"Events: #{ Event.where(:eventDate => dayHolder).count }&nbsp;<i class='fas fa-eye'></i>".html_safe, 
+                            calendar_view_path(:calendar_view_id, day: dayHolder), 
+                            :class => "dayInfo", 
+                            :title => "View Events" %>
                     <% end %>
                 </td>
                 <% dayNum += 1 %>
@@ -55,7 +58,10 @@
                         
                         <% numOfEvents = Event.where(:eventDate => dayHolder).count %>
                         <% if numOfEvents != 0 %>
-                            <%= link_to"Events: #{ Event.where(:eventDate => dayHolder).count }&nbsp;<i class='fas fa-eye'></i>".html_safe, calendar_view_path(:calendar_view_id, day: dayHolder), :class => "dayInfo", :title => "View Events" %>
+                            <%= link_to"Events: #{ Event.where(:eventDate => dayHolder).count }&nbsp;<i class='fas fa-eye'></i>".html_safe, 
+                                calendar_view_path(:calendar_view_id, day: dayHolder), 
+                                :class => "dayInfo", 
+                                :title => "View Events" %>
                         <% end %>
                     </td>
                     <% dayNum += 1 %>
@@ -66,5 +72,3 @@
         </tr>
     <% end %>
 </table>
-
-<!-- <i class="fas fa-eye"></i> -->

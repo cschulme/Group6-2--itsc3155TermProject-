@@ -88,3 +88,17 @@ html, body {
 .welcomeButton div {
     margin: auto;
 }
+
+.helpContent {
+    grid-area: content;
+    background-color: rgba(255, 255, 255, 0.5);
+    
+    padding: 10px;
+    overflow-y: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.helpContent p {
+    font-size: 2.5vmin;   
+}
