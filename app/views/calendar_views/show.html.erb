@@ -1,14 +1,14 @@
 <div class="backgroundScene"></div>
 <div class="container">
     <div class="header">
-        <h1><%= @tag.tagName %></h1>
+        <h1>Events on <%= Date.parse(@dateForShow).strftime("%m/%d/%Y") %></h1>
     </div>
     
     <div class="nav">
         <a href="/../welcome/index.html">Home</a>
-        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id) %>
+        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "active" } %>
         <%= link_to 'Events', events_path %>
-        <%= link_to 'Tags', tags_path, { :class => "active" } %>
+        <%= link_to 'Tags', tags_path %>
         <a href="/../welcome/team.html">Team</a>
         <div class="search-container">
             <form action="/action_page.php">
@@ -19,21 +19,17 @@
     </div>
     
     <div class="content">
-        <div class="infoContainer">
-            <div class="labelBoxLarge">Description:</div> 
-            <div class="dataBoxLarge"><%= @tag.description %></div>
-            <div class="labelBoxLarge">Associated Events:</div>
+        <div class="eventsContainer">
+            <div class="labelBoxLarge">Events</div>
             <div class="dataBoxLarge">
                 <table class="tagsList">
                     <tr>
                         <th>Event</th>
-                        <th>Date</th>
                         <th>Options</th>
                     </tr>
-                    <% @tag.events.each do |event| %>
+                    <% @events.each do |event| %>
                         <tr>
                             <td><%= event.title %></td>
-                            <td><%= event.eventDate.strftime("%m/%d/%Y") %></td>
                             <td>
                                 <%= link_to'<i class="fas fa-eye"></i>'.html_safe, event_path(event), :title => "Show Event" %>
                                 <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_event_path(event), :title => "Edit Event" %>
@@ -48,5 +44,6 @@
                 </table>
             </div>
         </div>
-    <%= link_to 'Back to Tags', tags_path, { :class => "basicButton" } %>
+        <%= link_to 'Back to Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "basicButton" } %>
+    </div>
 </div>

@@ -1,5 +1,4 @@
 class CalendarViewsController < ApplicationController
-    
     def index
         @dateInUse = CalendarView.find(1).dateInUse
         
@@ -7,6 +6,12 @@ class CalendarViewsController < ApplicationController
             CalendarView.create(:dateInUse => Date.today)
             @dateInUse = CalendarView.find(1).dateInUse
         end
+    end
+    
+    def show
+        @dateForShow = params[:day]
+        @events = Event.where(:eventDate => @dateForShow)
+        
     end
     
     def previousMonth

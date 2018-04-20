@@ -254,3 +254,13 @@ html, body {
 .calendarLayout td.inactive {
     background-color: rgba(132, 132, 132, 0.5)
 }
+
+.eventsContainer {
+    height: 90%;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas:
+        "labelBoxLarge dataBoxLarge";
+    grid-gap: 5px;
+}

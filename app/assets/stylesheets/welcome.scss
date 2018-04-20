@@ -49,14 +49,12 @@ html, body {
     background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
     box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
     
-    /* Font Styling */
     display: flex;
     justify-content: center; /* align horizontal */
     align-items: center; /* align vertical */
     text-align: center;
     color: white;
-    font-size: 25px;
-    font-size: 3vmin;
+    font-size: 4vmin;
 }
 
 .welcomeButton {

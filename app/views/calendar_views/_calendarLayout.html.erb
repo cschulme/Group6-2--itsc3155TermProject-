@@ -1,7 +1,7 @@
 <!-- Declare variables -->
 <% activeMonth = @dateInUse.month %>
 <% activeYear = @dateInUse.year %>
-<% firstDate = Date.parse('1-'+activeMonth.to_s+"-"+activeYear.to_s) %>
+<% firstDate = Date.parse('1-'+activeMonth.to_s+'-'+activeYear.to_s) %>
 <% numOfDaysInMonth = Time.days_in_month(activeMonth, activeYear) %>
 <% case firstDate.cwday %>
 <% when 1..6 %>
@@ -26,7 +26,17 @@
             <% if i < startingPos %>
                 <td class="inactive"></td>
             <% else %>
-                <td><%= dayNum %></td>
+                <% dayHolder = Date.parse(dayNum.to_s+'-'+activeMonth.to_s+'-'+activeYear.to_s) %>
+                <td>
+                    <%= dayNum %>
+                    <div class="dayInfo">
+                        <% numOfEvents = Event.where(:eventDate => dayHolder).count %>
+                        <% if numOfEvents != 0 %>
+                            Events: <%= Event.where(:eventDate => dayHolder).count %>
+                            <%= link_to'<i class="fas fa-eye"></i>'.html_safe, calendar_view_path(:calendar_view_id, day: dayHolder), :title => "View Events" %>
+                        <% end %>
+                    </div>
+                </td>
                 <% dayNum += 1 %>
             <% end %>
         <% end %>
@@ -35,7 +45,17 @@
         <tr>
             <% for day in 1..7 %>
                 <% if dayNum <= numOfDaysInMonth %>
-                    <td><%= dayNum %></td>
+                    <% dayHolder = Date.parse(dayNum.to_s+'-'+activeMonth.to_s+'-'+activeYear.to_s) %>
+                    <td>
+                        <%= dayNum %>
+                        <div class="dayInfo">
+                            <% numOfEvents = Event.where(:eventDate => dayHolder).count %>
+                            <% if numOfEvents != 0 %>
+                                Events: <%= Event.where(:eventDate => dayHolder).count %>
+                                <%= link_to'<i class="fas fa-eye"></i>'.html_safe, calendar_view_path(:calendar_view_id, day: dayHolder), :title => "View Events" %>
+                            <% end %>
+                        </div>
+                    </td>
                     <% dayNum += 1 %>
                 <% else %>
                     <td class="inactive"></td>

@@ -152,6 +152,7 @@ html, body {
 
 /* --- Tag Index Table --- */
 .tagsListContainer {
+    height: 90%;
     overflow-y: auto;
 }
 
@@ -263,4 +264,8 @@ html, body {
 
 .tagsButtons {
     height: 100%;
+}
+
+.infoContainer {
+    height: 90%;
 }
