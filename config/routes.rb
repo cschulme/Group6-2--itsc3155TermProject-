@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get :previousMonth
     get :nextMonth
     get :thisMonth
+    get :selectMonth
   end
 
   root 'welcome#index'

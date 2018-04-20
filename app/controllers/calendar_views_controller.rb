@@ -37,4 +37,13 @@ class CalendarViewsController < ApplicationController
         
         redirect_to calendar_views_path
     end
+    
+    def selectMonth
+        @calendar_view ||= nil
+        @monthHolder = params[:monthParam]
+        @yearHolder = params[:yearParam]
+        @dateHolder = Date.parse('1-'+@monthHolder.to_s+'-'+@yearHolder.to_s)
+        CalendarView.find(1).update(:dateInUse => @dateHolder)
+        redirect_to calendar_views_path
+    end
 end

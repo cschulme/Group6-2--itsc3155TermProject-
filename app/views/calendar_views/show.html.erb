@@ -25,11 +25,17 @@
                 <table class="tagsList">
                     <tr>
                         <th>Event</th>
+                        <th>Starts</th>
+                        <th>Ends</th>
+                        <th>Tag</th>
                         <th>Options</th>
                     </tr>
                     <% @events.each do |event| %>
                         <tr>
                             <td><%= event.title %></td>
+                            <td class="<%= "inactive" if event.startTime.blank? %>"><%= event.startTime.strftime("%I:%M %p") %></td>
+                            <td class="<%= "inactive" if event.endTime.blank? %>"><%= event.endTime.strftime("%I:%M %p") %></td>
+                            <td><%= event.tag.tagName %></td>
                             <td>
                                 <%= link_to'<i class="fas fa-eye"></i>'.html_safe, event_path(event), :title => "Show Event" %>
                                 <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_event_path(event), :title => "Edit Event" %>

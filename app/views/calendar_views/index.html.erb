@@ -21,11 +21,21 @@
     <div class="calendarContent">
         <div class="sidebar">
             <div class="sidebarMainBox">
-                Jump to...
+                <%= @dateInUse.year %>
             </div>
             <div class="sidebarSubBox">
-                Month<br>
-                Year
+                <%= link_to "January", calendar_view_selectMonth_path(:calendar_view_id, monthParam: 1, yearParam: @dateInUse.year), :class => "sidebarSelect" %><br>
+                <%= link_to "February", calendar_view_selectMonth_path(:calendar_view_id, monthParam: 2, yearParam: @dateInUse.year), :class => "sidebarSelect" %><br>
+                <%= link_to "March", calendar_view_selectMonth_path(:calendar_view_id, monthParam: 3, yearParam: @dateInUse.year), :class => "sidebarSelect" %><br>
+                <%= link_to "April", calendar_view_selectMonth_path(:calendar_view_id, monthParam: 4, yearParam: @dateInUse.year), :class => "sidebarSelect" %><br>
+                <%= link_to "May", calendar_view_selectMonth_path(:calendar_view_id, monthParam: 5, yearParam: @dateInUse.year), :class => "sidebarSelect" %><br>
+                <%= link_to "June", calendar_view_selectMonth_path(:calendar_view_id, monthParam: 6, yearParam: @dateInUse.year), :class => "sidebarSelect" %><br>
+                <%= link_to "July", calendar_view_selectMonth_path(:calendar_view_id, monthParam: 7, yearParam: @dateInUse.year), :class => "sidebarSelect" %><br>
+                <%= link_to "August", calendar_view_selectMonth_path(:calendar_view_id, monthParam: 8, yearParam: @dateInUse.year), :class => "sidebarSelect" %><br>
+                <%= link_to "September", calendar_view_selectMonth_path(:calendar_view_id, monthParam: 9, yearParam: @dateInUse.year), :class => "sidebarSelect" %><br>
+                <%= link_to "October", calendar_view_selectMonth_path(:calendar_view_id, monthParam: 10, yearParam: @dateInUse.year), :class => "sidebarSelect" %><br>
+                <%= link_to "November", calendar_view_selectMonth_path(:calendar_view_id, monthParam: 11, yearParam: @dateInUse.year), :class => "sidebarSelect" %><br>
+                <%= link_to "December", calendar_view_selectMonth_path(:calendar_view_id, monthParam: 12, yearParam: @dateInUse.year), :class => "sidebarSelect" %>
             </div>
                 <%= link_to 'Go to Current Month', calendar_view_thisMonth_path(:calendar_view_id), { :class => "sidebarMainBoxButton" } %>
         </div>

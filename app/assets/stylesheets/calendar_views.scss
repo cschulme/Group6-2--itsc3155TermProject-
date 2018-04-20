@@ -190,7 +190,20 @@ html, body {
 .sidebar div.sidebarSubBox {
     padding: 10px;
     font-size: 2vmin;
+}
 
+.sidebar .sidebarSelect {
+    text-align: center;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar .sidebarSelect:hover {
+    background-color: rgba(255, 255, 255, 1);
 }
 
 /* --- Main --- */
@@ -260,6 +273,7 @@ html, body {
     text-align: center;
     font-size: 2vmin;
     background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
+    text-decoration: none;
     color: white;
     height: -moz-calc(50% - 5px);
     height: -webkit-calc(50% - 5px);
@@ -271,13 +285,8 @@ html, body {
     justify-content: center;
 }
 
-.calendarLayout td .dayInfo a {
-    text-decoration: none;
-    color: white;
-}
-
-.calendarLayout td .dayInfo a:hover {
-    color: lightgrey;
+.calendarLayout td .dayInfo:hover {
+    background: linear-gradient(to bottom right, rgb(34, 111, 184), rgb(102, 180, 252));
 }
 
 .calendarLayout td.inactive {
