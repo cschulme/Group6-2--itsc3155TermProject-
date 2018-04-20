@@ -293,6 +293,21 @@ html, body {
     background-color: rgba(132, 132, 132, 0.5)
 }
 
+.calendarLayout td a.addEventButton {
+    display:none;
+    text-decoration: none;
+    color: black;
+}
+
+.calendarLayout td:hover a.addEventButton {
+    display: inline;
+    color: rgb(126, 126, 126);
+}
+
+.calendarLayout td:hover a.addEventButton:hover {
+    color: black;
+}
+
 .eventsContainer {
     height: 90%;
     display: grid;

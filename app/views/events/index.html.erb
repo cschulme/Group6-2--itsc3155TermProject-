@@ -32,7 +32,7 @@
                     <th>Options</th>
                 </tr>
                 
-                <% @events.order(:startTime).each do |event| %>
+                <% @events.order(:eventDate).order(:startTime).each do |event| %>
                     <tr>
                         <td><%= event.title %></td>
                         <td class="<%= "inactive" if event.location.blank? %>"><%= event.location %></td>
