@@ -268,4 +268,10 @@ html, body {
 
 .infoContainer {
     height: 90%;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+        "labelBoxLarge dataBoxLarge"
+        "labelBoxLarge dataBoxLarge";
 }

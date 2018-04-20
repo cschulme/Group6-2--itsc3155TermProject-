@@ -36,8 +36,11 @@ class TagsController < ApplicationController
     end
     
     def destroy
+        # Assign any events associated to the delete tag to the General tag.
         @tagEvents = Tag.find(params[:id]).events
         @tagEvents.update(:tag_id => 1)
+        
+        # Destroy the tag.
         @tag = Tag.find(params[:id])
         @tag.destroy
         
