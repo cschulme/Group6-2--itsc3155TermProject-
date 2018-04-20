@@ -36,6 +36,8 @@ class TagsController < ApplicationController
     end
     
     def destroy
+        @tagEvents = Tag.find(params[:id]).events
+        @tagEvents.update(:tag_id => 1)
         @tag = Tag.find(params[:id])
         @tag.destroy
         
