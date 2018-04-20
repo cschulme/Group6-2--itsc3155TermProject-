@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ 
+ /* --- Mobile CSS --- */
+ @media only screen and (max-width: 600px) {
+     .container {
+         width: 100%;
+     }
+ }
