@@ -1,5 +1,11 @@
-class CreateEvents < ActiveRecord::Migration[5.1]
+class CreateTables < ActiveRecord::Migration[5.1]
   def change
+    create_table :calendar_views do |t|
+      t.date :dateInUse
+
+      t.timestamps
+    end
+    
     create_table :events do |t|
       t.string :title
       t.string :location
@@ -8,6 +14,13 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.time :startTime
       t.time :endTime
       t.references :tag, foreign_key: true
+
+      t.timestamps
+    end
+    
+    create_table :tags do |t|
+      t.string :tagName
+      t.text :description
 
       t.timestamps
     end

@@ -27,7 +27,7 @@ class CalendarViewsController < ApplicationController
     end
     
     def thisMonth
-        if CalendarView.find(1).dateInUse.nil?
+        if CalendarView.count == 0
             CalendarView.create(:dateInUse => Date.today)
         end
         
