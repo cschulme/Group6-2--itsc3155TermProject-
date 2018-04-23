@@ -1,6 +1,6 @@
 require 'rails_helper.rb'
 
-feature "User adds an article" do
+feature "User adds an event" do
 
     scenario "User successfully navigates to the New Event from the Your Events page" do
         visit events_path
