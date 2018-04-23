@@ -8,6 +8,11 @@ class EventsController < ApplicationController
     end
     
     def new
+        # Make sure the General tag exists.
+        if Tag.count == 0
+            Tag.create(:tagName => "General", :description => "This is the default tag for your events.")
+        end
+        
         @event = Event.new
     end
     

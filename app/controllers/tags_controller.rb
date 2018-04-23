@@ -1,6 +1,10 @@
 class TagsController < ApplicationController
     def index
-        @tags = Tag.all 
+        @tags = Tag.all
+        
+        if Tag.count == 0
+           Tag.create(:tagName => "General", :description => "This is the default tag for your events.")
+        end
     end
     
     def show
@@ -36,12 +40,19 @@ class TagsController < ApplicationController
     end
     
     def destroy
+        # Find the tag.
+        @tag = Tag.find(params[:id])
+        
+        # Make sure the General tag can't be maliciously destroyed.
+        if @tag.id == 1
+           redirect_to tags_path 
+        end
+        
         # Assign any events associated to the delete tag to the General tag.
         @tagEvents = Tag.find(params[:id]).events
         @tagEvents.update(:tag_id => 1)
         
         # Destroy the tag.
-        @tag = Tag.find(params[:id])
         @tag.destroy
         
         redirect_to tags_path
