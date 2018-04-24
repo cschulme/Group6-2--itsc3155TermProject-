@@ -11,7 +11,20 @@ class CalendarViewsController < ApplicationController
     def show
         @dateForShow = params[:day]
         @events = Event.where(:eventDate => @dateForShow)
+    end
+    
+    def new
+        @dayHolder = Date.parse(params[:day])
+        @day = @dayHolder.day
+        @month = @dayHolder.month
+        @year = @dayHolder.year
         
+        # Make sure the General tag exists.
+        if Tag.count == 0
+            Tag.create(:tagName => "General", :description => "This is the default tag for your events.")
+        end
+        
+        @event = Event.new
     end
     
     def previousMonth
