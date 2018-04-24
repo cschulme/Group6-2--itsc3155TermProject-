@@ -1,22 +1,3 @@
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0px;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.backgroundScene {
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    display: block;
-    position: fixed;
-    background-image: url("LakeBlur.jpg");
-    background-color: rgb(204, 130, 176);
-    background-size: cover;
-}
-
 .welcomeContainer {
     height: 40%;
     width: 50%;
@@ -101,4 +82,56 @@ html, body {
 
 .helpContent p {
     font-size: 2.5vmin;   
+}
+
+.teamContent {
+    grid-area: content;
+    background-color: rgba(255, 255, 255, 0.5);
+    
+    padding: 10px;
+    overflow-y: auto;
+    padding-left: 15%;
+    padding-right: 15%;
+    
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "memberContainer"
+        "memberContainer"
+        "memberContainer"
+        "memberContainer";
+    grid-gap: 30px;
+}
+
+.memberContainer {
+    height: 165px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+}
+
+.memberPicture img {
+    height: 165px;
+    width: 165px;
+    float: left;
+}
+
+.memberInfo {
+    float: right;
+    height: 165px;
+    width: calc(100% - 165px);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "memberName"
+        ".";
+}
+
+.memberName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
 }
