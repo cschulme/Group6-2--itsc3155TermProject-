@@ -15,6 +15,15 @@
     height: 90%;
 }
 
+.noEvents {
+    text-align: center;
+}
+
+.noEvents i {
+    font-size: 150px;
+    color: rgba(185, 24, 92, 0.767);
+}
+
 .eventsList table, th, td {
     border: none;
     font-size: 2vmin;
