@@ -44,6 +44,6 @@ feature "User adds an event" do
     	click_button "Create Event"
     	expect(page).to have_content("New Capybara Event")
     end
-
+    #lksjdlkj
 end
 
