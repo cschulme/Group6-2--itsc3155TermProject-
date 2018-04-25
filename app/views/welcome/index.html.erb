@@ -1,8 +1,13 @@
 <div class="backgroundScene"></div>
 <div class="welcomeContainer">
     <div class="welcomeBox">
-        <h1><i class="fa fa-calendar-o" aria-hidden="true" fa-lg></i></h1>&nbsp;&nbsp;
-        <h2>Calendar <br> App</h2>
+        <div class="welcomeBoxLogo">
+            <i class="fa fa-calendar-o" aria-hidden="true" fa-lg></i>
+        </div>
+        <br>
+        <div class="welcomeBoxName">
+            Calendar App
+        </div>
     </div>
     <%= link_to 'Enter', calendar_view_thisMonth_path(:calendar_view_id), { :class => "welcomeButton" } %>
     <div class="todaysEvents">
@@ -25,13 +30,14 @@
                         <!-- </div> -->
                         <div class="titleBox">
                             <%= event.title %>&nbsp;
-                            <% if event.location.blank? == false %>
-                                |&nbsp;
-                                <%= event.location %>
-                            <% end %>
-                            |&nbsp;<%= event.tag.tagName %>
                         </div>
-                        <div class="infoBox">
+                        <div class="infoBox1">
+                            <% if event.location.blank? == false %>
+                                <%= event.location %>&nbsp;|&nbsp;
+                            <% end %>
+                            <%= event.tag.tagName %>
+                        </div>
+                        <div class="infoBox2">
                             From <%= event.startTime.strftime("%I:%M %p") %> - <%= event.endTime.strftime("%I:%M %p") %>
                         </div>
                     </div>

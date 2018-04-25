@@ -16,9 +16,17 @@
     <div class="content">
         <div class="infoContainer">
             <div class="labelBoxSmall">Location:</div> 
-            <div class="dataBoxSmall"><%= @event.location %></div>
+            <div class=<% if @event.location.blank? %>
+                        <%= "dataBoxSmallInactive" %>
+                        <% else %>
+                        <%= "dataBoxSmall" %>
+                        <% end %>><%= @event.location %></div>
             <div class="labelBoxLarge">Information:</div>
-            <div class="dataBoxLarge"><%= simple_format(@event.eventInformation) %></div>
+            <div class=<% if @event.eventInformation.blank? %>
+                        <%= "dataBoxLargeInactive" %>
+                        <% else %>
+                        <%= "dataBoxLarge" %>
+                        <% end %>><%= simple_format(@event.eventInformation) %></div>
             <div class="labelBoxSmall">Date</div>
             <div class="dataBoxSmall"><%= @event.eventDate.strftime("%m/%d/%Y") %></div>
             <div class="labelBoxSmall">Starting Time:</div>

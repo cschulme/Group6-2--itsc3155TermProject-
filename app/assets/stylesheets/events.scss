@@ -128,12 +128,34 @@
     font-size: 2.5vmin;
 }
 
+.dataBoxSmallInactive {
+    grid-area: "dataBoxSmall";
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    overflow: auto;
+    padding: 5px;
+    background-color: rgba(206, 206, 206, 0.5);
+    font-size: 2.5vmin;
+}
+
 .dataBoxLarge {
     grid-area: "dataBoxLarge";
     
     overflow-y: auto;
     padding: 5px;
     background-color: rgba(255, 255, 255, 0.5);
+    font-size: 2.5vmin;
+}
+
+.dataBoxLargeInactive {
+    grid-area: "dataBoxLarge";
+    
+    overflow-y: auto;
+    padding: 5px;
+    background-color: rgba(206, 206, 206, 0.5);
     font-size: 2.5vmin;
 }
 

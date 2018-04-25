@@ -31,12 +31,34 @@
     background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
     box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
     
+    display: grid;
+    grid-template-rows: 4fr 3fr;
+    grid-template-columns: auto;
+    grid-template-areas:
+        "welcomeBoxLogo"
+        "welcomeBoxName";
+}
+
+.welcomeBoxLogo {
+    grid-area: welcomeBoxLogo;
+    
     display: flex;
-    justify-content: center; /* align horizontal */
-    align-items: center; /* align vertical */
-    text-align: center;
+    justify-content: center;
+    align-items: flex-end;
+    
+    font-size: 8vmin;
     color: white;
-    font-size: 4vmin;
+}
+
+.welcomeBoxName {
+    grid-area: welcomeBoxName;
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+    font-size: 5.5vmin;
+    color: white;
 }
 
 .welcomeButton {
@@ -118,10 +140,11 @@
     
     display: grid;
     grid-template-columns: 0.5fr 2fr 30fr;
-    grid-template-rows: 5fr 4fr;
+    grid-template-rows: 5fr 4fr 4fr;
     grid-template-areas:
         "indicator viewBox titleBox"
-        "indicator viewBox infoBox";
+        "indicator viewBox infoBox1"
+        "indicator viewBox infoBox2";
 }
 
 .indicator {
@@ -154,11 +177,19 @@
     font-size: 2.3vmin;
 }
 
-.infoBox {
+.infoBox1, .infoBox2 {
     padding-left: 10px;
     grid-area: infoBox;
     height: 100%;
     font-size: 2vmin;
+}
+
+.infoBox1 {
+    grid-area: infoBox1;
+}
+
+.infoBox2 {
+    grid-area: infoBox2;
 }
 
 .helpContent {
