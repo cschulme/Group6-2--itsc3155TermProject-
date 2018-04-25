@@ -1,13 +1,13 @@
 require 'rails_helper.rb'
 
 
-feature "User deletes an event" do
-    scenario "User successfully navigates to the Your Event page from the Your Calendar page" do
+feature "User edits an event" do
+    scenario "User successfully navigates to the Your Events page from the Your Calendar page" do
         visit events_path
         expect(page).to have_content ("Your Events")
     end
     
-    scenario "User successfully deletes their event" do
+    scenario "User successfully edits their event" do
         # Create the tag.
         visit new_tag_path
         fill_in "tag[tagName]", with:  "Test"
@@ -33,7 +33,9 @@ feature "User deletes an event" do
     	
     	# Delete that event.
         visit events_path
-        click_link "Delete Event"
-        expect(page).to have_content ("Your Events")
+        click_link "Edit Event"
+        fill_in "event[title]", with: "New Capybara Event Test"
+        click_button "Update Event"
+        expect(page).to have_content ("New Capybara Event Test")
     end
 end
