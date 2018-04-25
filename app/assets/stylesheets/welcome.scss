@@ -151,7 +151,7 @@
 .indicator {
     grid-area: indicator;
     
-    background-color: rgba(34, 111, 184, 0.9)
+    background-color: rgba(34, 111, 184, 0.9);
 }
 
 .viewBox {
@@ -208,6 +208,11 @@
     font-size: 2.5vmin;   
 }
 
+.helpContent h1 {
+    color: rgb(185, 24, 92);
+    text-align: center;
+}
+
 .teamContent {
     grid-area: content;
     background-color: rgba(255, 255, 255, 0.5);
@@ -225,26 +230,31 @@
         "memberContainer"
         "memberContainer"
         "memberContainer";
-    grid-gap: 30px;
+    grid-gap: 20px;
 }
 
 .memberContainer {
-    height: 165px;
+    height: 150px;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
 }
 
 .memberPicture img {
-    height: 165px;
-    width: 165px;
+    position: absolute;
+    height: 150px;
+    width: 150px;
     float: left;
+    border-top: 5px solid white;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+    border-bottom: 25px solid white;
 }
 
 .memberInfo {
     float: right;
     height: 165px;
-    width: calc(100% - 165px);
+    width: calc(100% - 150px);
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-areas:

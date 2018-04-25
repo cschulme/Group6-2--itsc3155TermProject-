@@ -25,11 +25,9 @@
                 <% @events.order(:startTime).each do |event| %>
                     <div class="todaysEventsBox">
                         <div class="indicator"></div>
-                        <!-- <div class="viewBox"> -->
-                            <%= link_to'<i class="fas fa-eye"></i>'.html_safe, event_path(event), :title => "Show Event", :class => "viewBox" %>
-                        <!-- </div> -->
+                        <%= link_to'<i class="fas fa-eye"></i>'.html_safe, event_path(event), :title => "Show Event", :class => "viewBox" %>
                         <div class="titleBox">
-                            <%= event.title %>&nbsp;
+                            <%= event.title %>
                         </div>
                         <div class="infoBox1">
                             <% if event.location.blank? == false %>
