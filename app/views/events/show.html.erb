@@ -26,6 +26,7 @@
                                                                 :class => "deleteBox" %>
             </div>
             <div class="showContentContainer">
+                <div class="startCap"></div>
                 <div class="showBox1">
                     <div class="datetimeBoxTitle">
                         When:
@@ -58,9 +59,10 @@
                         Information:
                     </div>
                     <div class="informatonBoxInfo">
-                        <%= @event.eventInformation %>
+                        <%= @event.eventInformation.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %>
                     </div>
                 </div>
+                <div class="cap"></div>
             </div>
         </div>
         <%= link_to 'Back to Events', events_path, { :class => "basicButton" } %>

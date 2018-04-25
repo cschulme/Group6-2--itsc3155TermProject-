@@ -59,10 +59,13 @@
                         
                         <% numOfEvents = Event.where(:eventDate => dayHolder).count %>
                         <% if numOfEvents != 0 %>
-                            <%= link_to"Events: #{ Event.where(:eventDate => dayHolder).count }&nbsp;<i class='fas fa-eye'></i>".html_safe, 
-                                calendar_view_path(:calendar_view_id, day: dayHolder), 
-                                :class => "dayInfo", 
-                                :title => "View Events" %>
+                            <div class="dayInfoHolder">
+                                <div class="startCap"></div>
+                                <%= link_to"Events: #{ Event.where(:eventDate => dayHolder).count }&nbsp;<i class='fas fa-eye'></i>".html_safe, 
+                                    calendar_view_path(:calendar_view_id, day: dayHolder), 
+                                    :class => "dayInfo", 
+                                    :title => "View Events" %>
+                            </div>
                         <% end %>
                     </td>
                     <% dayNum += 1 %>

@@ -101,7 +101,7 @@
     grid-area: verticalBox2;
     
     border-left: 1px black dashed;
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(240, 240, 240, 0.7));
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(240, 240, 240, 0.5));
     
     display: grid;
     grid-template-rows: 1.5fr 2fr;
@@ -168,16 +168,12 @@
 
 .showContentContainer {
     grid-area: showContentContainer;
-    
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
 
     display: grid;
-    grid-template-rows: 1fr 20fr 1fr;
-    grid-template-columns: 8fr 8fr;
+    grid-template-rows: auto;
+    grid-template-columns: 0.5fr 30fr 30fr 0.5fr;
     grid-template-areas:
-        ". . "
-        "showBox1 showBox2"
-        " . .";
+        "startCap showBox1 showBox2 cap";
 }
 
 .startCap {
@@ -199,8 +195,10 @@
 .showBox1 {
     grid-area: showBox1;
     
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
+    
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
         "datetimeBoxTitle datetimeBoxInfo"
@@ -208,13 +206,25 @@
         "tagBoxTitle tagBoxInfo";
 }
  
-.datetimeBoxTitle, .locationBoxTitle, .tagBoxTitle {   
-    padding-right: 10px;
+.datetimeBoxTitle, .locationBoxTitle, .tagBoxTitle {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     font-size: 2.5vmin;
     font-weight: bold;
+    color: white;
+}
+
+.datetimeBoxTitle {
+    background: linear-gradient(to bottom right, rgba(102, 180, 252, 0.9), rgba(40, 149, 251, 0.9));
+}
+
+.locationBoxTitle {
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
+}
+
+.tagBoxTitle {
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
 }
 
 .datetimeBoxInfo, .locationBoxInfo, .tagBoxInfo {
@@ -225,9 +235,15 @@
     font-size: 2.5vmin;
 }
 
+.datetimeBoxInfo, .locationBoxInfo {
+    border-bottom: 1px black dashed;
+}
+
 .showBox2 {
     grid-area: showBox2;
     border-left: 1px black dashed;
+    
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.65), rgba(240, 240, 240, 0.65));
     
     display: grid;
     grid-template-rows: 1fr 5fr;
@@ -237,11 +253,14 @@
 }
 
 .informationBoxTitle {
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2.5vmin;
     font-weight: bold;
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
+    color: white;
 }
 
 .informatonBoxInfo {
