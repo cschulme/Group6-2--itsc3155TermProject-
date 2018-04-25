@@ -2,7 +2,42 @@
 <div class="welcomeContainer">
     <div class="welcomeBox">
         <h1><i class="fa fa-calendar-o" aria-hidden="true" fa-lg></i></h1>&nbsp;&nbsp;
-        <h2>Calendar App</h2>
+        <h2>Calendar <br> App</h2>
     </div>
     <%= link_to 'Enter', calendar_view_thisMonth_path(:calendar_view_id), { :class => "welcomeButton" } %>
+    <div class="todaysEvents">
+        <div class="todaysEventsHeader">
+            <h1>Today's Events:</h1>
+        </div>
+        <div class="todaysEventsInfo">
+            <% if @events.count == 0 %>
+                <div class="todaysEventsNoInfo">
+                    <br>
+                    <i class="fa fa-calendar-times-o"></i>
+                    <h2>You don't have <br> any events today!</h2>
+                </div>
+            <% else %>
+                <% @events.order(:startTime).each do |event| %>
+                    <div class="todaysEventsBox">
+                        <div class="indicator"></div>
+                        <!-- <div class="viewBox"> -->
+                            <%= link_to'<i class="fas fa-eye"></i>'.html_safe, event_path(event), :title => "Show Event", :class => "viewBox" %>
+                        <!-- </div> -->
+                        <div class="titleBox">
+                            <%= event.title %>&nbsp;
+                            <% if event.location.blank? == false %>
+                                |&nbsp;
+                                <%= event.location %>
+                            <% end %>
+                            |&nbsp;<%= event.tag.tagName %>
+                        </div>
+                        <div class="infoBox">
+                            From <%= event.startTime.strftime("%I:%M %p") %> - <%= event.endTime.strftime("%I:%M %p") %>
+                        </div>
+                    </div>
+                    <br>
+                <% end %>
+            <% end %>
+        </div>
+    </div>
 </div>

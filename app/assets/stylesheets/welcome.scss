@@ -1,8 +1,8 @@
 .welcomeContainer {
-    height: 40%;
-    width: 50%;
-    top: 30%;
-    bottom: 30%;
+    height: 50%;
+    width: 70%;
+    top: 25%;
+    bottom: 25%;
     position: relative;
     padding: 0;
     margin: auto;
@@ -13,13 +13,14 @@
     
     /* Laying out the Welcome grid */
     display: grid;
-    grid-template-columns: 3fr 14fr 3fr;
-    grid-template-rows: 1fr 5fr 1fr 2fr 1fr;
-    grid-template-areas:". . ."
-        ". welcomeBox ."
-        ". . ."
-        ". welcomeButton ."
-        ". . .";
+    grid-template-columns: 1fr 10fr 1fr 10fr 1fr;
+    grid-template-rows: 1fr 16fr 1fr 4fr 1fr;
+    grid-template-areas:
+        ". . . . ."
+        ". welcomeBox . todaysEvents ."
+        ". . . todaysEvents ."
+        ". welcomeButton . todaysEvents ."
+        ". . . . .";
 }
 
 .welcomeBox {
@@ -28,7 +29,7 @@
     
     /* Box Styling */
     background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
-    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
     
     display: flex;
     justify-content: center; /* align horizontal */
@@ -51,7 +52,7 @@
     
     /* Style the box */
     background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
-    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
     
     text-align: center;
     color: white;
@@ -68,6 +69,96 @@
 
 .welcomeButton div {
     margin: auto;
+}
+
+.todaysEvents {
+    grid-area: todaysEvents;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(240, 240, 240, 0.5));
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-rows: 1fr 8fr 1fr 16fr 1fr;
+    grid-template-areas:
+        ". . ."
+        ". todaysEventsHeader ."
+        ". . ."
+        ". todaysEventsInfo ."
+        ". . .";
+}
+
+.todaysEventsHeader {
+    grid-area: todaysEventsHeader;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+    color: white;
+    font-size: 2vmin;
+}
+
+.todaysEventsInfo {
+    grid-area: todaysEventsInfo;
+    overflow-y: auto;
+}
+
+.todaysEventsNoInfo {
+    text-align: center;
+    font-size: 2.5vmin;
+}
+
+.todaysEventsNoInfo i {
+    font-size: 6vmin;
+}
+
+.todaysEventsBox {
+    height: 30%;
+    
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 30fr;
+    grid-template-rows: 5fr 4fr;
+    grid-template-areas:
+        "indicator viewBox titleBox"
+        "indicator viewBox infoBox";
+}
+
+.indicator {
+    grid-area: indicator;
+    
+    background-color: rgba(34, 111, 184, 0.9)
+}
+
+.viewBox {
+    grid-area: viewBox;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(to bottom right, rgba(102, 180, 252, 0.9), rgba(40, 149, 251, 0.9));
+
+    color: white;
+    text-decoration: none;
+}
+
+.viewBox:hover {
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(102, 180, 252, 0.9));
+}
+
+.titleBox {
+    padding-left: 10px;
+    grid-area: titleBox;
+    height: 100%;
+    font-size: 2.3vmin;
+}
+
+.infoBox {
+    padding-left: 10px;
+    grid-area: infoBox;
+    height: 100%;
+    font-size: 2vmin;
 }
 
 .helpContent {
@@ -134,4 +225,10 @@
     align-items: center;
     color: white;
     background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+}
+
+.memberRole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
