@@ -28,7 +28,7 @@
     grid-area: welcomeBox;
     
     /* Box Styling */
-    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
     box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
     
     display: grid;
@@ -117,7 +117,7 @@
     justify-content: center;
     align-items: center;
     
-    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
     color: white;
     font-size: 2vmin;
 }
@@ -196,7 +196,7 @@
 
 .helpContent {
     grid-area: content;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     
     padding: 10px;
     overflow-y: auto;
@@ -209,7 +209,7 @@
 }
 
 .helpContent h1 {
-    color: rgb(185, 24, 92);
+    color: rgb(32, 108, 183);
     text-align: center;
 }
 
@@ -267,7 +267,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
 }
 
 .memberRole {

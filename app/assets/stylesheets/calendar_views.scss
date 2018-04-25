@@ -29,7 +29,7 @@
     font-size: 2.5vmin;
     color: white;
     text-align: center;
-    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
 }
 
 .sidebar a.sidebarMainBoxButton {
@@ -37,7 +37,7 @@
     text-align: center;
     justify-content: center;
     padding: 10px;
-    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
     
     font-size: 2.5vmin;
     color: white;
@@ -45,7 +45,7 @@
 }
 
 .sidebar a.sidebarMainBoxButton:hover {
-    background: linear-gradient(to bottom right, rgba(185, 24, 92, 0.767), rgba(236, 56, 131, 0.767));
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(40, 149, 251, 0.9));
     transition: 0.3s;
 }
 
@@ -114,7 +114,7 @@
     width: calc(100% / 7);
     height: 10%;
     color: white;
-    background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
 }
 
 .calendarLayout td {
@@ -172,10 +172,4 @@
 
 .eventsContainer {
     height: 90%;
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 1fr 5fr;
-    grid-template-areas:
-        "labelBoxLarge dataBoxLarge";
-    grid-gap: 5px;
 }

@@ -13,28 +13,55 @@
         <a href="/../welcome/help.html">Help</a>
     </div>
     
-    <div class="content">
-        <div class="infoContainer">
-            <div class="labelBoxSmall">Location:</div> 
-            <div class=<% if @event.location.blank? %>
-                        <%= "dataBoxSmallInactive" %>
-                        <% else %>
-                        <%= "dataBoxSmall" %>
-                        <% end %>><%= @event.location %></div>
-            <div class="labelBoxLarge">Information:</div>
-            <div class=<% if @event.eventInformation.blank? %>
-                        <%= "dataBoxLargeInactive" %>
-                        <% else %>
-                        <%= "dataBoxLarge" %>
-                        <% end %>><%= simple_format(@event.eventInformation) %></div>
-            <div class="labelBoxSmall">Date</div>
-            <div class="dataBoxSmall"><%= @event.eventDate.strftime("%m/%d/%Y") %></div>
-            <div class="labelBoxSmall">Starting Time:</div>
-            <div class="dataBoxSmall"><%= @event.startTime.strftime("%I:%M %p") %></div>
-            <div class="labelBoxSmall">Ending Time:</div>
-            <div class="dataBoxSmall"><%= @event.endTime.strftime("%I:%M %p") %></div>
-            <div class="labelBoxSmall">Tag:</div>
-            <div class="dataBoxSmall"><%= @event.tag.tagName %></div>
+    <div class="showContent">
+        <div class="showContentShell">
+            <div class="optionsBox">
+                <div class="startCap"></div>
+                <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_event_path(@event), :title => "Edit Event", :class => "editBox" %>
+                <%= link_to'<i class="fas fa-trash-alt"></i>'.html_safe, 
+                                                                event_path(@event),
+                                                                method: :delete,
+                                                                data: { confirm: 'Are you sure you want to delete this event?' },
+                                                                :title => "Delete Event",
+                                                                :class => "deleteBox" %>
+            </div>
+            <div class="showContentContainer">
+                <div class="showBox1">
+                    <div class="datetimeBoxTitle">
+                        When:
+                    </div>
+                    <div class="datetimeBoxInfo">
+                        <%= @event.eventDate.strftime("%m/%d/%Y") %><br>
+                        from 
+                        <%= @event.startTime.strftime("%I:%M %p") %> 
+                        - 
+                        <%= @event.endTime.strftime("%I:%M %p") %>
+                    </div>
+                    <% if @event.location.blank? == false %>
+                        <div class="locationBoxTitle">
+                            Where:
+                        </div>
+                        <div class="locationBoxInfo">
+                            <%= @event.location %>
+                        </div>
+                    <% end %>
+                    <div class="tagBoxTitle">
+                        Tag:
+                    </div>
+                    <div class="tagBoxInfo">
+                        <%= @event.tag.tagName %>
+                    </div>
+                    
+                </div>
+                <div class="showBox2">
+                    <div class="informationBoxTitle">
+                        Information:
+                    </div>
+                    <div class="informatonBoxInfo">
+                        <%= @event.eventInformation %>
+                    </div>
+                </div>
+            </div>
         </div>
         <%= link_to 'Back to Events', events_path, { :class => "basicButton" } %>
     </div>

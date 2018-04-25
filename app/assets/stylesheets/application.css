@@ -30,8 +30,8 @@ html, body {
     z-index: -1;
     display: block;
     position: fixed;
-    background-image: url("LakeBlur.jpg");
-    background-color: rgb(204, 130, 176);
+    background-image: url("metalBlur.jpg");
+    background-color: grey;
     background-size: cover;
 }
 
@@ -62,7 +62,7 @@ html, body {
     /* Position in container grid */
     grid-area: header;
     
-    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
     text-align: center;
     color: white;
     font-size: 25px;
@@ -75,7 +75,7 @@ html, body {
     /* Position in container grid */
     grid-area: nav;
     
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.815), rgba(240, 240, 240, 0.815));
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
     overflow: hidden;
     font-size: 25px;
     font-size: 2.5vmin;
@@ -84,6 +84,7 @@ html, body {
 
 .nav a {
     text-align: center;
+    font-weight: bold;
     height: 100%;
     width: calc((100% / 6) - 12px);
     padding: 6px;

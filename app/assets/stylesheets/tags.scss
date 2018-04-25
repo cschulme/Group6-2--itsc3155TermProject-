@@ -14,47 +14,75 @@
 
 /* --- Tag Index Table --- */
 .tagsListContainer {
-    height: 90%;
     overflow-y: auto;
+    height: 90%;
 }
 
-.tagsList table, th, td {
-    border: none;
-    font-size: 2vmin;
+.tagsBox {
+    height: 10%;
+    margin-bottom: 10px;
+    
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 2fr 2fr 20fr 35fr 0.5fr;
+    grid-template-areas:
+        "indicator viewBox editBox deleteBox tagVerticalBox1 tagVerticalBox2 cap";
 }
 
-.tagsList {
-    width: 100%;
+.tagsBox1 {
+    height: 10%;
+    margin-bottom: 10px;
+    
+    display: grid;
+    grid-template-columns: 0.5fr 6fr 20fr 35fr 0.5fr;
+    grid-template-areas:
+        "indicator viewBox tagVerticalBox1 tagVerticalBox2 cap";
 }
 
-.tagsList table {
-    height: 100%;
+.tagVerticalBox1, .tagVerticalBox2 {
+    padding-left: 10px;
 }
 
-.tagsList th {
-    background: linear-gradient(to bottom right, rgba(236, 56, 131, 0.767), rgba(185, 24, 92, 0.767));
+.tagVerticalBox1 {
+    grid-area: tagVerticalBox1;
+    
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
+    
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "tagTitleBox"
+        "tagCountBox";
+}
+
+.tagTitleBox {
+    grid-area: tagTitleBox;
+    
     font-size: 2.5vmin;
-    color: white;
-    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: bold;
 }
 
-.tagsList td {
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 5px;
-    text-align: center;
+.tagCountBox {
+    grid-area: tagCountBox;
+    font-size: 2vmin;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.tagsList td a {
-    text-decoration: none;
-    color: black;
-}
-
-.tagsList td a:hover {
-    color: rgb(114, 114, 114);
-}
-
-.tagsList td.inactive {
-    background-color: rgba(165, 165, 165, 0.5);
+.tagVerticalBox2 {
+    grid-area: tagVerticalBox2;
+    
+    border-left: 1px black dashed;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.7), rgba(240, 240, 240, 0.7));
+    
+    display: grid;
+    grid-template-rows: 1.5fr 2fr;
+    grid-template-areas:
+        "informationTitleBox"
+        "informationInfoBox";
 }
 
 /* --- Tag Form --- */
