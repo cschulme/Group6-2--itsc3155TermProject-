@@ -30,7 +30,7 @@ html, body {
     z-index: -1;
     display: block;
     position: fixed;
-    background-image: url("colorfulBlueBlur.jpg");
+    background-image: url("metalBlur.jpg");
     background-color: grey;
     background-size: cover;
 }
