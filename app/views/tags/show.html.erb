@@ -16,7 +16,13 @@
     <div class="content">
         <div class="infoContainer">
             <div class="labelBoxLarge">Description:</div> 
-            <div class="dataBoxLarge"><%= @tag.description %></div>
+            <div class=<% if @tag.description.blank? %>
+                        <%= "dataBoxLargeInactive" %>
+                        <% else %>
+                        <%= "dataBoxLarge" %>
+                        <% end %>>
+                <%= @tag.description %>
+            </div>
             <div class="labelBoxLarge">Associated Events:</div>
             <div class="dataBoxLarge">
                 <table class="tagsList">
