@@ -53,7 +53,7 @@
                     <% dayHolder = Date.parse(dayNum.to_s+'-'+activeMonth.to_s+'-'+activeYear.to_s) %>
                     <td>
                         <div class="dayNumber">
-                            <a href="#" class="addEventButton">+</a>
+                            <%= link_to "+", new_calendar_view_path(day: dayHolder), { :class => "addEventButton" } %>
                             <%= dayNum %>
                         </div>
                         
