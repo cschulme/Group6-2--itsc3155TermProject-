@@ -232,6 +232,7 @@
     padding: 10px;
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(240, 240, 240, 0.5));
     border-left: 1px dashed black;
+    overflow-y: hidden;
     
     display: grid;
     grid-template-columns: 10px 1fr 10px;
@@ -260,7 +261,8 @@
 .tagEventsInfo {
     grid-area: tagEventsInfo;
     
-    overflow-y: auto;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .tagEventsNoInfo {
@@ -276,12 +278,12 @@
     height: 75px;
     
     display: grid;
-    grid-template-columns: 10px 5fr 50fr 10px;
+    grid-template-columns: 10px 30px 1fr;
     grid-template-rows: 5fr 4fr 4fr;
     grid-template-areas:
-        "indicator viewBox titleBox cap"
-        "indicator viewBox infoBox1 cap"
-        "indicator viewBox infoBox2 cap";
+        "indicator viewBox titleBox"
+        "indicator viewBox infoBox1"
+        "indicator viewBox infoBox2";
 }
 
 .indicator {
@@ -374,7 +376,7 @@
     content: "This tag cannot be modified.";
     display: inline-block;
     position: absolute;
-    background-color: rgb(32, 108, 183);
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
     color: white;
     padding: 10px;
     right: 110%;

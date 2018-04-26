@@ -45,14 +45,20 @@
                         <div class="locationBoxInfo">
                             <%= @event.location %>
                         </div>
+                        <div class="tagBoxTitle1">
+                            Tag:
+                        </div>
+                        <div class="tagBoxInfo">
+                            <%= @event.tag.tagName %>
+                        </div>
+                    <% else %>
+                        <div class="tagBoxTitle2">
+                            Tag:
+                        </div>
+                        <div class="tagBoxInfo">
+                            <%= @event.tag.tagName %>
+                        </div>
                     <% end %>
-                    <div class="tagBoxTitle">
-                        Tag:
-                    </div>
-                    <div class="tagBoxInfo">
-                        <%= @event.tag.tagName %>
-                    </div>
-                    
                 </div>
                 <div class="showBox2">
                     <div class="informationBoxTitle">

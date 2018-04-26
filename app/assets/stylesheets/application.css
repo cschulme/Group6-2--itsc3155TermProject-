@@ -13,8 +13,6 @@
  *= require_tree .
  *= require_self
  */
- 
- 
 
 html, body {
     height: 100%;
@@ -22,6 +20,26 @@ html, body {
     margin: 0;
     padding: 0px;
     font-family: "Helvetica", sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
 }
 
 .backgroundScene {

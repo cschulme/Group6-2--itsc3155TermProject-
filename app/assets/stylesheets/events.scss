@@ -211,7 +211,7 @@
         "tagBoxTitle tagBoxInfo";
 }
  
-.datetimeBoxTitle, .locationBoxTitle, .tagBoxTitle {
+.datetimeBoxTitle, .locationBoxTitle, .tagBoxTitle1, .tagBoxTitle2 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -228,8 +228,12 @@
     background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
 }
 
-.tagBoxTitle {
+.tagBoxTitle1 {
     background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
+}
+
+.tagBoxTitle2 {
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
 }
 
 .datetimeBoxInfo, .locationBoxInfo, .tagBoxInfo {

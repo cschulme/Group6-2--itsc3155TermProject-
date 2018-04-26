@@ -131,24 +131,11 @@
     height: 50%;
 }
 
-.calendarLayout td .dayInfoHolder {
+.calendarLayout td .dayInfo {
     height: -moz-calc(50% - 5px);
     height: -webkit-calc(50% - 5px);
     height: calc(50% - 5px);
     bottom: 5px;
-    
-    display: grid;
-    grid-template-columns: 1fr 15fr;
-    grid-template-areas:
-        "startCap dayInfo";
-}
- 
-.calendarLayout td .startCap {
-    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
-}
-
-.calendarLayout td .dayInfo {
-    grid-area: dayInfo;
     font-size: 2vmin;
     background: linear-gradient(to bottom right, rgb(102, 180, 252), rgb(34, 111, 184));
     text-decoration: none;
@@ -157,6 +144,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+ 
+.calendarLayout td .startCap {
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
 }
 
 .calendarLayout td .dayInfo:hover {
