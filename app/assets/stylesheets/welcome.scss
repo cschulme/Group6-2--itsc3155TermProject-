@@ -238,31 +238,28 @@
     width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+    
+    display: grid;
+    grid-template-rows: 90px 60px 25px;
+    grid-template-columns: 150px 1fr;
+    grid-template-areas:
+        "memberPicture memberName"
+        "memberPicture memberRole"
+        "pictureBottom space";
 }
 
 .memberPicture img {
-    position: absolute;
-    height: 150px;
-    width: 150px;
+    grid-area: memberPicture;
+    
+    height: 140px;
+    width: 140px;
     float: left;
-    border-top: 5px solid white;
-    border-left: 5px solid white;
-    border-right: 5px solid white;
-    border-bottom: 25px solid white;
-}
-
-.memberInfo {
-    float: right;
-    height: 165px;
-    width: calc(100% - 150px);
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-        "memberName"
-        "memberRole";
+    border: 5px solid white;
 }
 
 .memberName {
+    grid-area: memberName;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -271,7 +268,25 @@
 }
 
 .memberRole {
+    grid-area: memberRole;
+    
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.pictureBottom {
+    grid-area: pictureBottom;
+    
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2vmin;
+    background-color: white;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.space {
+    background-color: rgba(255, 255, 255, 0);
 }
