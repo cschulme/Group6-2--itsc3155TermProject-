@@ -232,7 +232,6 @@
     padding: 10px;
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(240, 240, 240, 0.5));
     border-left: 1px dashed black;
-    overflow-y: hidden;
     
     display: grid;
     grid-template-columns: 10px 1fr 10px;
@@ -261,7 +260,6 @@
 .tagEventsInfo {
     grid-area: tagEventsInfo;
     
-    overflow: hidden;
     overflow-y: scroll;
 }
 
