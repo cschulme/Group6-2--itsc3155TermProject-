@@ -357,8 +357,33 @@
     justify-content: center;
 }
 
-.optionsBox, .optionsBoxWithToolTip {
-    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+.optionsBoxInactive {
+    grid-area: optionsBox;
+    position: relative;
+    
+    display: grid;
+    grid-template-columns: 10px 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "startCap editBox deleteBox";
+}
+
+.optionsBoxInactive::after {
+    content: "This tag cannot be modified.";
+    display: inline-block;
+    position: absolute;
+    background-color: rgb(32, 108, 183);
+    color: white;
+    padding: 10px;
+    right: 105%;
+    bottom: 25%;
+    white-space: nowrap;
+    transform: scale(0);
+    transition: transform ease-out 150ms;
+}
+
+.optionsBoxInactive:hover::after {
+    transform: scale(1);
 }
 
 .basicButton {

@@ -67,16 +67,19 @@
                 <div class="cap"></div>
             </div>
             
-            <div class="optionsBox">
-                <% if @tag.id == 1 %>
+            
+            <% if @tag.id == 1 %>
+                <div class="optionsBoxInactive">
                     <div class="startCapInactive"></div>
-                    <div class="editInactive" title="The General tag cannot be editted.">
+                    <div class="editInactive">
                         <i class="fas fa-edit"></i>
                     </div>
-                    <div class="deleteInactive" title="The General tag cannot be deleted.">
+                    <div class="deleteInactive">
                         <i class="fas fa-trash-alt"></i>
                     </div>
-                <% else %>
+                </div>
+            <% else %>
+                <div class="optionsBox">
                     <div class="startCap"></div>
                     <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_tag_path(@tag), :title => "Edit Tag", :class => "editBox" %>
                     <%= link_to'<i class="fas fa-trash-alt"></i>'.html_safe, 
@@ -85,8 +88,8 @@
                                                                     data: { confirm: 'Are you sure you want to delete this event?' },
                                                                     :title => "Delete Tag",
                                                                     :class => "deleteBox" %>
-                <% end %>
-            </div>
+                </div>
+            <% end %>
         </div>
         
         <%= link_to 'Back to Tags', tags_path, { :class => "basicButton" } %>
