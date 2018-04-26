@@ -50,7 +50,8 @@
                                                                             method: :delete,
                                                                             data: { confirm: 'Are you sure you want to delete this tag?' },
                                                                             :title => "Delete Tag",
-                                                                            :class => "deleteBox" %>
+                                                                            :class => "deleteBox",
+                                                                            authenticity_token: true %>
                         <div class="tagVerticalBox1">
                             <div class="tagTitleBox">
                                 <%= tag.tagName %>
