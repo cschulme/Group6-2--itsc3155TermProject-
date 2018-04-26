@@ -30,7 +30,9 @@
                         </div>
                         <div class="tagVerticalBox2">
                             <div class="informationTitleBox">
-                                Tag Information:
+                                <% if tag.description.blank? == false %>
+                                    Tag Information:
+                                <% end %>
                             </div>
                             <div class="informationInfoBox">
                                 <%= truncate(tag.description, length: 80, separator: ' ', omission: '... (continued)') %>
@@ -59,7 +61,9 @@
                         </div>
                         <div class="tagVerticalBox2">
                             <div class="informationTitleBox">
-                                Tag Information:
+                                <% if tag.description.blank? == false %>
+                                    Tag Information:
+                                <% end %>
                             </div>
                             <div class="informationInfoBox">
                                 <%= truncate(tag.description, length: 80, separator: ' ', omission: '... (continued)') %>

@@ -26,6 +26,7 @@
 .eventsBox {
     height: 10%;
     margin-bottom: 10px;
+    box-shadow: -5px 0px 10px rgba(54, 54, 54, 0.25), 5px 0px 10px rgba(54, 54, 54, 0.25);
     
     display: grid;
     grid-template-columns: 0.5fr 2fr 2fr 2fr 20fr 35fr 0.5fr;
@@ -169,6 +170,7 @@
 .showContentContainer {
     grid-area: showContentContainer;
     max-height: 510px;
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
 
     display: grid;
     grid-template-rows: auto;

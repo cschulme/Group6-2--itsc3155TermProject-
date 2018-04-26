@@ -21,6 +21,7 @@
 .tagsBox {
     height: 10%;
     margin-bottom: 10px;
+    box-shadow: -5px 0px 10px rgba(54, 54, 54, 0.25), 5px 0px 10px rgba(54, 54, 54, 0.25);
     
     display: grid;
     grid-template-columns: 0.5fr 2fr 2fr 2fr 20fr 35fr 0.5fr;
@@ -31,6 +32,7 @@
 .tagsBox1 {
     height: 10%;
     margin-bottom: 10px;
+    box-shadow: -5px 0px 10px rgba(54, 54, 54, 0.25), 5px 0px 10px rgba(54, 54, 54, 0.25);
     
     display: grid;
     grid-template-columns: 0.5fr 6fr 20fr 35fr 0.5fr;
@@ -179,17 +181,18 @@
 .showShell {
     grid-area: showShell;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+    grid-template-columns: 10px 1fr 1fr 10px;
     grid-template-rows: auto;
     grid-template-areas:
-        "box1 box2";
+        "startCap box1 box2 cap";
 }
 
 .box1 {
     grid-area: box1;
     padding: 10px;
     max-height: 510px;
-    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(240, 240, 240, 0.5));
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
     
     display: grid;
     grid-template-columns: 10px 1fr 10px;
@@ -352,4 +355,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.optionsBox {
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+}
+
+.basicButton {
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
 }
