@@ -6,7 +6,7 @@
         </div>
         <br>
         <div class="welcomeBoxName">
-            Calendar App
+            eVents
         </div>
     </div>
     <%= link_to 'Enter', calendar_view_thisMonth_path(:calendar_view_id), { :class => "welcomeButton" } %>
@@ -19,7 +19,11 @@
                 <div class="todaysEventsNoInfo">
                     <br>
                     <i class="fa fa-calendar-times-o"></i>
-                    <h2>You don't have <br> any events today.</h2>
+                    <h2>
+                        You don't have
+                        <br>
+                        any events today.
+                    </h2>
                 </div>
             <% else %>
                 <% @events.order(:startTime).each do |event| %>
@@ -38,6 +42,7 @@
                         <div class="infoBox2">
                             From <%= event.startTime.strftime("%I:%M %p") %> - <%= event.endTime.strftime("%I:%M %p") %>
                         </div>
+                        <div class="cap"></div>
                     </div>
                     <br>
                 <% end %>

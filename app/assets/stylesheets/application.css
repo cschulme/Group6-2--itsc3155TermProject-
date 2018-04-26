@@ -48,7 +48,6 @@ html, body {
     
     /* Grid Layout */
     display: grid;
-    grid-template-columns: 100%;
     grid-template-rows: 2fr 1fr 16fr;
     grid-template-areas:
         "header"

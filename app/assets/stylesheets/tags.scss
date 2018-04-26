@@ -156,12 +156,200 @@
     height: 100%;
 }
 
+/* --- Show.html Styling --- */
+
+.showContent {
+    grid-area: content;
+}
+
 .infoContainer {
     height: 90%;
+    
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 14fr 1fr 2fr 1fr;
+    grid-template-columns: 1fr 10fr 2fr 1fr;
     grid-template-areas:
-        "labelBoxLarge dataBoxLarge"
-        "labelBoxLarge dataBoxLarge";
+        ". . . ."
+        ". showShell showShell ."
+        ". . . ."
+        ". . optionsBox ."
+        ". . . .";
+}
+
+.showShell {
+    grid-area: showShell;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "box1 box2";
+}
+
+.box1 {
+    grid-area: box1;
+    padding: 10px;
+    max-height: 510px;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(240, 240, 240, 0.5));
+    
+    display: grid;
+    grid-template-columns: 10px 1fr 10px;
+    grid-template-rows: 10px 1fr 10px 4fr 10px;
+    grid-template-areas:
+        ". . ."
+        ". tagDescriptionHeader ."
+        ". . ."
+        ". tagDescriptionInfo ."
+        ". . .";
+}
+
+.tagDescriptionHeader {
+    grid-area: tagDescriptionHeader;
+    
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
+    color: white;
+    font-size: 3vmin;
+    font-weight: bold;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tagDescriptionInfo {
+    grid-area: tagDescriptionInfo;
+    overflow-y: auto;
+    font-size: 2.5vmin;
+    padding-top: -20px;
+    margin-top: -20px;
+}
+
+.box2 {
+    max-height: 510px;
+    grid-area: box2;
+    padding: 10px;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(240, 240, 240, 0.5));
+    border-left: 1px dashed black;
+    
+    display: grid;
+    grid-template-columns: 10px 1fr 10px;
+    grid-template-rows: 10px 1fr 10px 4fr 10px;
+    grid-template-areas:
+        ". . ."
+        ". tagEventsHeader ."
+        ". . ."
+        ". tagEventsInfo ."
+        ". . .";
+}
+
+.tagEventsHeader {
+    grid-area: tagEventsHeader;
+    
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
+    color: white;
+    font-size: 3vmin;
+    font-weight: bold;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tagEventsInfo {
+    grid-area: tagEventsInfo;
+    
+    overflow-y: auto;
+}
+
+.tagEventsNoInfo {
+    text-align: center;
+    font-size: 2.5vmin;
+}
+
+.tagEventsNoInfo i {
+    font-size: 6vmin;
+}
+
+.tagEventsBox {
+    height: 75px;
+    
+    display: grid;
+    grid-template-columns: 10px 5fr 50fr 10px;
+    grid-template-rows: 5fr 4fr 4fr;
+    grid-template-areas:
+        "indicator viewBox titleBox cap"
+        "indicator viewBox infoBox1 cap"
+        "indicator viewBox infoBox2 cap";
+}
+
+.indicator {
+    grid-area: indicator;
+    
+    background-color: rgba(34, 111, 184, 0.9);
+}
+
+.viewBox {
+    grid-area: viewBox;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background: linear-gradient(to bottom right, rgba(102, 180, 252, 0.9), rgba(40, 149, 251, 0.9));
+
+    color: white;
+    text-decoration: none;
+}
+
+.viewBox:hover {
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(102, 180, 252, 0.9));
+}
+
+.titleBox {
+    padding-left: 10px;
+    grid-area: titleBox;
+    height: 100%;
+    font-size: 2.3vmin;
+    font-weight: bold;
+}
+
+.infoBox1, .infoBox2 {
+    padding-left: 10px;
+    grid-area: infoBox;
+    height: 100%;
+    font-size: 2vmin;
+}
+
+.infoBox1 {
+    grid-area: infoBox1;
+}
+
+.infoBox2 {
+    grid-area: infoBox2;
+}
+
+.startCapInactive {
+    grid-area: startCap;
+    background-color: rgb(81, 81, 81);
+}
+
+.editInactive {
+    grid-area: editBox;
+    
+    color: white;
+    background: linear-gradient(to bottom right, rgba(163, 163, 163, 0.9), rgba(135, 135, 135, 0.9));
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deleteInactive {
+    grid-area: deleteBox;
+    
+    color: white;
+    background: linear-gradient(to bottom right, rgba(99, 99, 99, 0.9), rgba(81, 81, 81, 0.9));
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
