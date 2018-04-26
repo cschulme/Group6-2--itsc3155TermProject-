@@ -55,7 +55,7 @@
                                         <%= event.tag.tagName %>
                                     </div>
                                     <div class="infoBox2">
-                                        From <%= event.startTime.strftime("%I:%M %p") %> - <%= event.endTime.strftime("%I:%M %p") %>
+                                        <%= event.eventDate.strftime("%m/%d/%Y") %> from <%= event.startTime.strftime("%I:%M %p") %> - <%= event.endTime.strftime("%I:%M %p") %>
                                     </div>
                                     <div class="cap"></div>
                                 </div>
@@ -70,10 +70,10 @@
             <div class="optionsBox">
                 <% if @tag.id == 1 %>
                     <div class="startCapInactive"></div>
-                    <div class="editInactive">
+                    <div class="editInactive" title="The General tag cannot be editted.">
                         <i class="fas fa-edit"></i>
                     </div>
-                    <div class="deleteInactive">
+                    <div class="deleteInactive" title="The General tag cannot be deleted.">
                         <i class="fas fa-trash-alt"></i>
                     </div>
                 <% else %>
@@ -83,7 +83,7 @@
                                                                     tag_path(@tag),
                                                                     method: :delete,
                                                                     data: { confirm: 'Are you sure you want to delete this event?' },
-                                                                    :title => "Delete Event",
+                                                                    :title => "Delete Tag",
                                                                     :class => "deleteBox" %>
                 <% end %>
             </div>

@@ -157,8 +157,8 @@
 .showContentShell {
     height: 90%;
     display: grid;
-    grid-template-rows: 12% 64% 2% 10% 12%;
-    grid-template-columns: 5% 80% 10% 5%;
+    grid-template-rows: 1fr 14fr 1fr 2fr 1fr;
+    grid-template-columns: 1fr 10fr 2fr 1fr;
     grid-template-areas:
         ". . . ."
         ". showContentContainer showContentContainer ."
@@ -189,7 +189,7 @@
     grid-area: optionsBox;
     
     display: grid;
-    grid-template-columns: 1fr 8fr 8fr;
+    grid-template-columns: 10px 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
         "startCap editBox deleteBox";
