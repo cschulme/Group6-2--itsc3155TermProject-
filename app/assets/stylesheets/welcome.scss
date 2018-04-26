@@ -275,6 +275,15 @@
     align-items: center;
 }
 
+.memberRole a {
+    text-decoration: none;
+    color: black;
+}
+
+.memberRole a:hover {
+    color: rgb(114, 114, 114);
+}
+
 .pictureBottom {
     grid-area: pictureBottom;
     

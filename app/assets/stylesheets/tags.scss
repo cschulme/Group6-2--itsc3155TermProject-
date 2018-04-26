@@ -24,7 +24,7 @@
     box-shadow: -5px 0px 10px rgba(54, 54, 54, 0.25), 5px 0px 10px rgba(54, 54, 54, 0.25);
     
     display: grid;
-    grid-template-columns: 0.5fr 2fr 2fr 2fr 20fr 35fr 0.5fr;
+    grid-template-columns: 10px 30px 30px 30px 20fr 35fr 10px;
     grid-template-areas:
         "indicator viewBox editBox deleteBox tagVerticalBox1 tagVerticalBox2 cap";
 }
@@ -35,7 +35,7 @@
     box-shadow: -5px 0px 10px rgba(54, 54, 54, 0.25), 5px 0px 10px rgba(54, 54, 54, 0.25);
     
     display: grid;
-    grid-template-columns: 0.5fr 6fr 20fr 35fr 0.5fr;
+    grid-template-columns: 10px 90px 20fr 35fr 10px;
     grid-template-areas:
         "indicator viewBox tagVerticalBox1 tagVerticalBox2 cap";
 }
@@ -260,7 +260,7 @@
 .tagEventsInfo {
     grid-area: tagEventsInfo;
     
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .tagEventsNoInfo {
