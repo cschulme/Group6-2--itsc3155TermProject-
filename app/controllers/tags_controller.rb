@@ -57,6 +57,17 @@ class TagsController < ApplicationController
         
         redirect_to tags_path
     end
+    
+    def newEvent
+        @tag = Tag.find(params[:tag_id])
+        
+        # Make sure the General tag exists.
+        if Tag.count == 0
+            Tag.create(:tagName => "General", :description => "This is the default tag for your events.")
+        end
+        
+        @event = Event.new
+    end
 end
 
 private

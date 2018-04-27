@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :tags do
     resources :events
+    get :newEvent, to: "tags#newEvent"
   end
   
   resources :events

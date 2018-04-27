@@ -169,7 +169,7 @@
     
     display: grid;
     grid-template-rows: 1fr 14fr 1fr 2fr 1fr;
-    grid-template-columns: 1fr 10fr 2fr 1fr;
+    grid-template-columns: 1fr 10fr 3fr 1fr;
     grid-template-areas:
         ". . . ."
         ". showShell showShell ."
@@ -335,11 +335,22 @@
     background-color: rgb(81, 81, 81);
 }
 
+.newInactive {
+    grid-area: newBox;
+    
+    color: white;
+    background: linear-gradient(to bottom right, rgba(163, 163, 163, 0.9), rgba(135, 135, 135, 0.9));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .editInactive {
     grid-area: editBox;
     
     color: white;
-    background: linear-gradient(to bottom right, rgba(163, 163, 163, 0.9), rgba(135, 135, 135, 0.9));
+    background: linear-gradient(to bottom right, rgba(135, 135, 135, 0.9), rgba(99, 99, 99, 0.9));
     
     display: flex;
     align-items: center;
@@ -364,10 +375,10 @@
     box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
     
     display: grid;
-    grid-template-columns: 10px 1fr 1fr;
+    grid-template-columns: 10px 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas:
-        "startCap editBox deleteBox";
+        "startCap newBox editBox deleteBox";
 }
 
 .optionsBoxInactive::after {
@@ -391,4 +402,26 @@
 
 .basicButton {
     box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+}
+
+.tagOptionsBox {
+    grid-area: optionsBox;
+    position: relative;
+    
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+    
+    display: grid;
+    grid-template-columns: 10px 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "startCap newBox editBox deleteBox";
+}
+
+.newBox {
+    grid-area: newBox;
+    background: linear-gradient(to bottom right, rgba(102, 180, 252, 0.9), rgba(40, 149, 251, 0.9));
+}
+
+.newBox:hover {
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(102, 180, 252, 0.9));
 }
