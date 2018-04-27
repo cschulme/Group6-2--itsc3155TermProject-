@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
     def index
-        @events = Event.all
+        if params[:filter] != nil
+            @events = Event.where(["eventDate >= ?", Date.today])
+        else
+            @events = Event.all
+        end
     end
     
     def show

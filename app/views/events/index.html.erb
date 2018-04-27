@@ -67,6 +67,11 @@
                 <% end %>
             <% end %>
         </div>
-            <%= link_to 'New Event', new_event_path, { :class => "basicButton" } %>
+        <%= link_to 'New Event', new_event_path, { :class => "basicButton1" } %>
+        <% if @events == Event.where(["eventDate >= ?", Date.today]) %>
+            <%= link_to 'Show All Events', events_path, { :class => "basicButton2" } %>
+        <% else %>
+            <%= link_to 'Only Show Upcoming Events', events_path(filter: Date.today), { :class => "basicButton2" } %>
+        <% end %>
     </div>
 </div>

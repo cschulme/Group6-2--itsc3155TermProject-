@@ -384,7 +384,7 @@
 }
 
 .inactiveButtons::after {
-    content: "This tag cannot be modified.";
+    content: "This tag cannot be editted or deleted.";
     display: inline-block;
     position: absolute;
     background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));

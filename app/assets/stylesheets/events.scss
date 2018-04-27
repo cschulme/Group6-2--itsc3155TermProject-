@@ -469,3 +469,43 @@
 .eventsButtons {
     height: 100%;
 }
+
+.basicButton1 {
+    margin-top: 5px;
+    height: 8%;
+    width: 49.5%;
+    float: left;
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
+    display: flex;
+    color: white;
+    font-size: 2.5vmin;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.basicButton1:hover {
+    background: linear-gradient(to bottom right, rgb(34, 111, 184), rgb(102, 180, 252));
+    transition: 0.3s;
+    transition: 0.3s;
+}
+
+.basicButton2 {
+    margin-top: 5px;
+    height: 8%;
+    width: 49.5%;
+    float: right;
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
+    display: flex;
+    color: white;
+    font-size: 2.5vmin;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.basicButton2:hover {
+    background: linear-gradient(to bottom right, rgb(34, 111, 184), rgb(102, 180, 252));
+    transition: 0.3s;
+    transition: 0.3s;
+}

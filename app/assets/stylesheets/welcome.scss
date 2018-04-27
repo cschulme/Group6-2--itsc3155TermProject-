@@ -240,18 +240,6 @@
     text-align: center;
 }
 
-.underline {
-    // Use the default underline for browsers that
-    // don’t support @supports (<= IE11)
-    text-decoration: underline;
-  
-    // Use the filter in browsers that support @supports, but aren’t Safari
-    @supports not (-webkit-text-decoration-skip: objects) {
-        filter: url('#svg-underline');
-        text-decoration: none;
-    }
-}
-
 .teamContent {
     grid-area: content;
     background-color: rgba(255, 255, 255, 0.5);
