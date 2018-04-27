@@ -2,6 +2,7 @@ class Event < ApplicationRecord
   belongs_to :tag
   validates :title, :eventDate, :startTime, :endTime, presence: true
   validates :title, length: { maximum: 50 }
+  validates :location, length: { maximum: 50 }
   validate :validStartAndEndTime
   
   def validStartAndEndTime
