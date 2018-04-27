@@ -330,11 +330,6 @@
     grid-area: infoBox2;
 }
 
-.startCapInactive {
-    grid-area: startCap;
-    background-color: rgb(81, 81, 81);
-}
-
 .newInactive {
     grid-area: newBox;
     
@@ -375,29 +370,97 @@
     box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
     
     display: grid;
-    grid-template-columns: 10px 1fr 1fr 1fr;
+    grid-template-columns: 10px 1fr 2fr;
     grid-template-rows: auto;
     grid-template-areas:
-        "startCap newBox editBox deleteBox";
+        "startCap newBox inactiveButtons";
 }
 
-.optionsBoxInactive::after {
+.inactiveButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "editBox deleteBox";
+}
+
+.inactiveButtons::after {
     content: "This tag cannot be modified.";
     display: inline-block;
     position: absolute;
     background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
     color: white;
+    font-size: 2vmin;
     padding: 10px;
-    right: 110%;
+    right: 105%;
     bottom: 25%;
     white-space: nowrap;
     transform: scale(0);
     transition: transform ease-out 150ms;
 }
 
-.optionsBoxInactive:hover::after {
+.inactiveButtons:hover::after {
     transform: scale(1);
     box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+}
+
+.newBoxTag:hover::after {
+    transform: scale(1);
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+}
+
+.editBoxTag:hover::after {
+    transform: scale(1);
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+}
+
+.deleteBoxTag:hover::after {
+    transform: scale(1);
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+}
+
+.newBoxTag::after {
+    content: "Add a new event.";
+    display: inline-block;
+    position: absolute;
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
+    color: white;
+    font-size: 2vmin;
+    padding: 10px;
+    right: 105%;
+    bottom: 25%;
+    white-space: nowrap;
+    transform: scale(0);
+    transition: transform ease-out 150ms;
+}
+
+.editBoxTag::after {
+    content: "Edit this tag.";
+    display: inline-block;
+    position: absolute;
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
+    color: white;
+    font-size: 2vmin;
+    padding: 10px;
+    right: 105%;
+    bottom: 25%;
+    white-space: nowrap;
+    transform: scale(0);
+    transition: transform ease-out 150ms;
+}
+
+.deleteBoxTag::after {
+    content: "Delete this tag.";
+    display: inline-block;
+    position: absolute;
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
+    color: white;
+    font-size: 2vmin;
+    padding: 10px;
+    right: 105%;
+    bottom: 25%;
+    white-space: nowrap;
+    transform: scale(0);
+    transition: transform ease-out 150ms;
 }
 
 .basicButton {
@@ -417,11 +480,29 @@
         "startCap newBox editBox deleteBox";
 }
 
-.newBox {
+.newBoxTag {
     grid-area: newBox;
     background: linear-gradient(to bottom right, rgba(102, 180, 252, 0.9), rgba(40, 149, 251, 0.9));
 }
 
-.newBox:hover {
+.newBoxTag:hover {
     background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(102, 180, 252, 0.9));
+}
+
+.editBoxTag {
+    grid-area: editBox;
+    background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
+}
+
+.deleteBoxTag {
+    grid-area: deleteBox;
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
+}
+
+.editBoxTag:hover {
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(40, 149, 251, 0.9));
+}
+
+.deleteBoxTag:hover {
+    background: linear-gradient(to bottom right, rgba(20, 68, 117, 0.9), rgba(32, 108, 183, 0.9));
 }

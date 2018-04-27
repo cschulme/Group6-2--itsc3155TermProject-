@@ -196,21 +196,60 @@
 
 .helpContent {
     grid-area: content;
-    background-color: rgba(255, 255, 255, 0.7);
-    
-    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
     overflow-y: auto;
-    padding-left: 5%;
-    padding-right: 5%;
+    
+    display: grid;
+    grid-template-columns: 65px 1fr 65px;
+    grid-template-rows: 40px 10px 1fr 10px 40px;
+    grid-template-areas:
+        ". . ."
+        ". startCap ."
+        ". helpContainer ."
+        ". cap ."
+        ". . .";
 }
 
-.helpContent p {
-    font-size: 2.5vmin;   
+.startCap {
+    grid-area: startCap;
+    
+    background-color: rgba(34, 111, 184, 0.9);
 }
 
-.helpContent h1 {
+.cap {
+    grid-area: cap;
+    
+    background-color: rgba(34, 111, 184, 0.9);
+}
+
+.helpContainer {
+    grid-area: helpContainer;
+    
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+    padding: 25px;
+}
+
+.helpContainer p {
+    font-size: 2.5vmin; 
+    text-align: justify;
+}
+
+.helpContainer h1 {
     color: rgb(32, 108, 183);
     text-align: center;
+}
+
+.underline {
+    // Use the default underline for browsers that
+    // don’t support @supports (<= IE11)
+    text-decoration: underline;
+  
+    // Use the filter in browsers that support @supports, but aren’t Safari
+    @supports not (-webkit-text-decoration-skip: objects) {
+        filter: url('#svg-underline');
+        text-decoration: none;
+    }
 }
 
 .teamContent {

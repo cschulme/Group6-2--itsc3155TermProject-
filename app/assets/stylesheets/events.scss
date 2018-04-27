@@ -34,7 +34,7 @@
         "indicator viewBox editBox deleteBox verticalBox1 verticalBox2 cap";
 }
 
-.viewBox, .editBox, .deleteBox, .newBox {
+.viewBox, .editBox, .deleteBox, .newBoxTag, .editBoxTag, .deleteBoxTag, .editBoxEvent, .deleteBoxEvent {
     font-size: 2vmin;
     display: flex;
     justify-content: center;
@@ -49,26 +49,68 @@
     background: linear-gradient(to bottom right, rgba(102, 180, 252, 0.9), rgba(40, 149, 251, 0.9));
 }
 
-.editBox {
+.editBox, .editBoxEvent {
     grid-area: editBox;
+    position: relative;
     background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
 }
 
-.deleteBox {
+.deleteBox, .deleteBoxEvent {
     grid-area: deleteBox;
+    position: relative;
     background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
 }
 
-.viewBox:hover, {
+.viewBox:hover {
     background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(102, 180, 252, 0.9));
 }
 
-.editBox:hover {
+.editBox:hover, .editBoxEvent:hover {
     background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(40, 149, 251, 0.9));
 }
 
-.deleteBox:hover {
+.deleteBox:hover, .deleteBoxEvent:hover {
     background: linear-gradient(to bottom right, rgba(20, 68, 117, 0.9), rgba(32, 108, 183, 0.9));
+}
+
+.editBoxEvent::after {
+    content: "Edit this event.";
+    display: inline-block;
+    position: absolute;
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
+    color: white;
+    font-size: 2vmin;
+    padding: 10px;
+    right: 125%;
+    bottom: 25%;
+    white-space: nowrap;
+    transform: scale(0);
+    transition: transform ease-out 150ms;
+}
+
+.deleteBoxEvent::after {
+    content: "Delete this event.";
+    display: inline-block;
+    position: absolute;
+    background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
+    color: white;
+    font-size: 2vmin;
+    padding: 10px;
+    right: 225%;
+    bottom: 25%;
+    white-space: nowrap;
+    transform: scale(0);
+    transition: transform ease-out 150ms;
+}
+
+.editBoxEvent:hover::after {
+    transform: scale(1);
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+}
+
+.deleteBoxEvent:hover::after {
+    transform: scale(1);
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
 }
 
 .verticalBox1, .verticalBox2 {
@@ -186,6 +228,9 @@
 
 .optionsBox {
     grid-area: optionsBox;
+    
+    position: relative;
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
     
     display: grid;
     grid-template-columns: 10px 1fr 1fr;

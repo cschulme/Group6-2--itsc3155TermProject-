@@ -17,13 +17,13 @@
         <div class="showContentShell">
             <div class="optionsBox">
                 <div class="startCap"></div>
-                <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_event_path(@event), :title => "Edit Event", :class => "editBox" %>
+                <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_event_path(@event), :title => "Edit Event", :class => "editBoxEvent" %>
                 <%= link_to'<i class="fas fa-trash-alt"></i>'.html_safe, 
                                                                 event_path(@event),
                                                                 method: :delete,
                                                                 data: { confirm: 'Are you sure you want to delete this event?' },
                                                                 :title => "Delete Event",
-                                                                :class => "deleteBox" %>
+                                                                :class => "deleteBoxEvent" %>
             </div>
             <div class="showContentContainer">
                 <div class="startCap"></div>
