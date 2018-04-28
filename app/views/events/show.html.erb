@@ -1,76 +1,78 @@
 <div class="backgroundScene"></div>
-<div class="container">
-    <div class="header">
-        <h1><%= @event.title %></h1>
-    </div>
-    
-    <div class="nav">
-        <a href="/../welcome/index.html" class="navButton">Home</a>
-        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "navButton" } %>
-        <%= link_to 'Events', events_path, { :class => "navButton active" } %>
-        <%= link_to 'Tags', tags_path, { :class => "navButton" } %>
-        <a href="/../welcome/team.html" class="navButton">Team</a>
-        <a href="/../welcome/help.html" class="navButton">Help</a>
-    </div>
-    
-    <div class="showContent">
-        <div class="showContentShell">
-            <div class="optionsBox">
-                <div class="startCap"></div>
-                <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_event_path(@event), :title => "Edit Event", :class => "editBoxEvent" %>
-                <%= link_to'<i class="fas fa-trash-alt"></i>'.html_safe, 
-                                                                event_path(@event),
-                                                                method: :delete,
-                                                                data: { confirm: 'Are you sure you want to delete this event?' },
-                                                                :title => "Delete Event",
-                                                                :class => "deleteBoxEvent" %>
-            </div>
-            <div class="showContentContainer">
-                <div class="startCap"></div>
-                <div class="showBox1">
-                    <div class="datetimeBoxTitle">
-                        When:
-                    </div>
-                    <div class="datetimeBoxInfo">
-                        <%= @event.eventDate.strftime("%m/%d/%Y") %><br>
-                        from 
-                        <%= @event.startTime.strftime("%I:%M %p") %> 
-                        - 
-                        <%= @event.endTime.strftime("%I:%M %p") %>
-                    </div>
-                    <% if @event.location.blank? == false %>
-                        <div class="locationBoxTitle">
-                            Where:
-                        </div>
-                        <div class="locationBoxInfo">
-                            <%= @event.location %>
-                        </div>
-                        <div class="tagBoxTitle1">
-                            Tag:
-                        </div>
-                        <div class="tagBoxInfo">
-                            <%= @event.tag.tagName %>
-                        </div>
-                    <% else %>
-                        <div class="tagBoxTitle2">
-                            Tag:
-                        </div>
-                        <div class="tagBoxInfo">
-                            <%= @event.tag.tagName %>
-                        </div>
-                    <% end %>
-                </div>
-                <div class="showBox2">
-                    <div class="informationBoxTitle">
-                        Information:
-                    </div>
-                    <div class="informatonBoxInfo">
-                        <%= @event.eventInformation.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %>
-                    </div>
-                </div>
-                <div class="cap"></div>
-            </div>
+<div class="shell">
+    <div class="container">
+        <div class="header">
+            <h1><%= @event.title %></h1>
         </div>
-        <%= link_to 'Back to Events', events_path, { :class => "basicButton" } %>
+        
+        <div class="nav">
+            <a href="/../welcome/index.html" class="navButton">Home</a>
+            <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "navButton" } %>
+            <%= link_to 'Events', events_path, { :class => "navButton active" } %>
+            <%= link_to 'Tags', tags_path, { :class => "navButton" } %>
+            <a href="/../welcome/team.html" class="navButton">Team</a>
+            <a href="/../welcome/help.html" class="navButton">Help</a>
+        </div>
+        
+        <div class="showContent">
+            <div class="showContentShell">
+                <div class="optionsBox">
+                    <div class="startCap"></div>
+                    <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_event_path(@event), :title => "Edit Event", :class => "editBoxEvent" %>
+                    <%= link_to'<i class="fas fa-trash-alt"></i>'.html_safe, 
+                                                                    event_path(@event),
+                                                                    method: :delete,
+                                                                    data: { confirm: 'Are you sure you want to delete this event?' },
+                                                                    :title => "Delete Event",
+                                                                    :class => "deleteBoxEvent" %>
+                </div>
+                <div class="showContentContainer">
+                    <div class="startCap"></div>
+                    <div class="showBox1">
+                        <div class="datetimeBoxTitle">
+                            When:
+                        </div>
+                        <div class="datetimeBoxInfo">
+                            <%= @event.eventDate.strftime("%m/%d/%Y") %><br>
+                            from 
+                            <%= @event.startTime.strftime("%I:%M %p") %> 
+                            - 
+                            <%= @event.endTime.strftime("%I:%M %p") %>
+                        </div>
+                        <% if @event.location.blank? == false %>
+                            <div class="locationBoxTitle">
+                                Where:
+                            </div>
+                            <div class="locationBoxInfo">
+                                <%= @event.location %>
+                            </div>
+                            <div class="tagBoxTitle1">
+                                Tag:
+                            </div>
+                            <div class="tagBoxInfo">
+                                <%= @event.tag.tagName %>
+                            </div>
+                        <% else %>
+                            <div class="tagBoxTitle2">
+                                Tag:
+                            </div>
+                            <div class="tagBoxInfo">
+                                <%= @event.tag.tagName %>
+                            </div>
+                        <% end %>
+                    </div>
+                    <div class="showBox2">
+                        <div class="informationBoxTitle">
+                            Information:
+                        </div>
+                        <div class="informatonBoxInfo">
+                            <%= @event.eventInformation.gsub(/(?:\n\r?|\r\n?)/, '<br>').html_safe %>
+                        </div>
+                    </div>
+                    <div class="cap"></div>
+                </div>
+            </div>
+            <%= link_to 'Back to Events', events_path, { :class => "basicButton" } %>
+        </div>
     </div>
 </div>

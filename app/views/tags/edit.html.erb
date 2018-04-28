@@ -1,33 +1,35 @@
 <div class="backgroundScene"></div>
-<div class="container">
-    <div class="header">
-        <h1>Editing: <%= @tag.tagName %></h1>
-    </div>
-    
-    <div class="nav">
-        <a href="/../welcome/index.html" class="navButton">Home</a>
-        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "navButton" } %>
-        <%= link_to 'Events', events_path, { :class => "navButton" } %>
-        <%= link_to 'Tags', tags_path, { :class => "navButton active" } %>
-        <a href="/../welcome/team.html" class="navButton">Team</a>
-        <a href="/../welcome/help.html" class="navButton">Help</a>
-    </div>
-    
-    <div class="content">
-        <% if @tag.errors.any? %>
-            <div id="error_explanation">
-                <h2>
-                    <%= pluralize(@tag.errors.count, "error") %> prohibited
-                    this tag from being saved:
-                </h2>
-                <ul>
-                    <% @tag.errors.full_messages.each do |msg| %>
-                        <li><%= msg %></li>
-                    <% end %>
-                </ul>
-            </div>
-        <% end %>
+<div class="shell">
+    <div class="container">
+        <div class="header">
+            <h1>Editing: <%= @tag.tagName %></h1>
+        </div>
         
-        <%= render 'form' %>
+        <div class="nav">
+            <a href="/../welcome/index.html" class="navButton">Home</a>
+            <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "navButton" } %>
+            <%= link_to 'Events', events_path, { :class => "navButton" } %>
+            <%= link_to 'Tags', tags_path, { :class => "navButton active" } %>
+            <a href="/../welcome/team.html" class="navButton">Team</a>
+            <a href="/../welcome/help.html" class="navButton">Help</a>
+        </div>
+        
+        <div class="content">
+            <% if @tag.errors.any? %>
+                <div id="error_explanation">
+                    <h2>
+                        <%= pluralize(@tag.errors.count, "error") %> prohibited
+                        this tag from being saved:
+                    </h2>
+                    <ul>
+                        <% @tag.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+            
+            <%= render 'form' %>
+        </div>
     </div>
 </div>

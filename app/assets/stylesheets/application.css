@@ -53,31 +53,6 @@ html, body {
     background-size: cover;
 }
 
-.container {
-    /* Dimensions of Container */
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0px;
-    position: relative;
-    
-    /* Styling for Container */
-    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
-    
-    
-    /* Styling for Container */
-    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
-    
-    /* Grid Layout */
-    display: grid;
-    grid-template-rows: 2fr 1fr 16fr;
-    grid-template-columns: 1fr 1200px 1fr;
-    grid-template-areas:
-        ". header ."
-        ". nav ."
-        ". content .";
-}
-
 /* --- Header --- */
 
 .header {
@@ -101,7 +76,7 @@ html, body {
     
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
     overflow: hidden;
-    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.4), 10px 0px 20px rgba(54, 54, 54, 0.4);
+    box-shadow: 0px -10px 20px rgba(54, 54, 54, 0.4), 0px 10px 20px rgba(54, 54, 54, 0.4);
 }
 
 .navButton {
@@ -137,18 +112,33 @@ html, body {
 
 /* --- Largest Screens --- */
 @media all and (min-width: 1280px) {
-    .container {
-        /* Styling for Container */
-        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    .shell {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        
+        display: grid;
+        grid-template-columns: 1fr 1200px 1fr;
+        grid-template-rows: 100%;
+        grid-template-areas:
+            ". container .";
+    }
     
+    .container {
+        grid-area: container;
+        
+        -moz-box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+        -webkit-box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+        
         /* Grid Layout */
         display: grid;
         grid-template-rows: 2fr 1fr 16fr;
-        grid-template-columns: 1fr 1200px 1fr;
+        grid-template-columns: 100%;
         grid-template-areas:
-            ". header ."
-            ". nav ."
-            ". content .";
+            "header"
+            "nav"
+            "content";
     }   
     
     .header {
@@ -168,18 +158,29 @@ html, body {
 
 /* --- Regular Desktop --- */
 @media all and (min-width: 1024px) and (max-width: 1280px) {
-    .container {
-        /* Styling for Container */
-        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    .shell {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        
+        display: grid;
+        grid-template-columns: 1fr 1000px 1fr;
+        grid-template-rows: 100%;
+        grid-template-areas:
+            ". container .";
+    }
     
+    .container {
+        grid-area: container;
+        
         /* Grid Layout */
         display: grid;
         grid-template-rows: 2fr 1fr 16fr;
-        grid-template-columns: 1fr 1000px 1fr;
+        grid-template-columns: 100%;
         grid-template-areas:
-            ". header ."
-            ". nav ."
-            ". content .";
+            "header"
+            "nav"
+            "content";
     }
     
     .header {
@@ -199,18 +200,29 @@ html, body {
  
 /* --- Tablet Landscape --- */
 @media all and (min-width: 768px) and (max-width: 1024px) {
-    .container {
-        /* Styling for Container */
-        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    .shell {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        
+        display: grid;
+        grid-template-columns: 1fr 750px 1fr;
+        grid-template-rows: 100%;
+        grid-template-areas:
+            ". container .";
+    }
     
+    .container {
+        grid-area: container;
+        
         /* Grid Layout */
         display: grid;
         grid-template-rows: 2fr 2fr 16fr;
-        grid-template-columns: 1fr 750px 1fr;
+        grid-template-columns: 100%;
         grid-template-areas:
-            ". header ."
-            ". nav ."
-            ". content .";
+            "header"
+            "nav"
+            "content";
     } 
     
     .nav {
@@ -227,14 +239,25 @@ html, body {
 
 /* --- Tablet --- */
 @media all and (min-width: 480px) and (max-width: 768px) {
-    .container {
-        /* Styling for Container */
-        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    .shell {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas:
+            "container";
+    }
     
+    .container {
+        grid-area: container;
+        
         /* Grid Layout */
         display: grid;
         grid-template-rows: 2fr 2fr 16fr;
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
         grid-template-areas:
             "header"
             "nav"
@@ -255,11 +278,25 @@ html, body {
 
 /* --- Phone --- */
 @media all and (max-width: 480px) { 
+    .shell {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        grid-template-areas:
+            "container";
+    }
+    
     .container {
+        grid-area: container;
+        
         /* Grid Layout */
         display: grid;
         grid-template-rows: 2fr 3fr 16fr;
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
         grid-template-areas:
             "header"
             "nav"

@@ -1,8 +1,4 @@
 .welcomeContainer {
-    height: 50%;
-    width: 70%;
-    top: 25%;
-    bottom: 25%;
     position: relative;
     padding: 0;
     margin: auto;
@@ -10,17 +6,6 @@
     /* Styling */
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), rgba(240, 240, 240, 0.5));
     box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
-    
-    /* Laying out the Welcome grid */
-    display: grid;
-    grid-template-columns: 1fr 10fr 1fr 10fr 1fr;
-    grid-template-rows: 1fr 16fr 1fr 4fr 1fr;
-    grid-template-areas:
-        ". . . . ."
-        ". welcomeBox . todaysEvents ."
-        ". . . todaysEvents ."
-        ". welcomeButton . todaysEvents ."
-        ". . . . .";
 }
 
 .welcomeBox {
@@ -317,6 +302,26 @@
 
 /* --- Largest Screens --- */
 @media all and (min-width: 1280px) {
+    /* --- Welcome Page --- */
+    
+    .welcomeContainer {
+        height: 50%;
+        width: 70%;
+        top: 25%;
+        bottom: 25%;
+        
+        /* Laying out the Welcome grid */
+        display: grid;
+        grid-template-columns: 1fr 10fr 1fr 10fr 1fr;
+        grid-template-rows: 1fr 16fr 1fr 4fr 1fr;
+        grid-template-areas:
+            ". . . . ."
+            ". welcomeBox . todaysEvents ."
+            ". . . todaysEvents ."
+            ". welcomeButton . todaysEvents ."
+            ". . . . .";
+    }
+    
     /* --- Team --- */
     
     .teamContent {
@@ -383,6 +388,26 @@
 
 /* --- Regular Desktop --- */
 @media all and (min-width: 1024px) and (max-width: 1280px) {
+    /* --- Welcome Page --- */
+    
+    .welcomeContainer {
+        height: 50%;
+        width: 70%;
+        top: 25%;
+        bottom: 25%;
+        
+        /* Laying out the Welcome grid */
+        display: grid;
+        grid-template-columns: 1fr 10fr 1fr 10fr 1fr;
+        grid-template-rows: 1fr 16fr 1fr 4fr 1fr;
+        grid-template-areas:
+            ". . . . ."
+            ". welcomeBox . todaysEvents ."
+            ". . . todaysEvents ."
+            ". welcomeButton . todaysEvents ."
+            ". . . . .";
+    }
+    
     /* --- Team --- */
     
     .teamContent {
@@ -449,6 +474,28 @@
  
 /* --- Tablet Landscape --- */
 @media all and (min-width: 768px) and (max-width: 1024px) {
+    /* --- Welcome Page --- */
+    
+    .welcomeContainer {
+        height: 90%;
+        width: 60%;
+        top: 5%;
+        bottom: 5%;
+        
+        /* Laying out the Welcome grid */
+        display: grid;
+        grid-template-columns: 1fr 13fr 1fr;
+        grid-template-rows: 1fr 16fr 1fr 4fr 1fr 21fr 1fr;
+        grid-template-areas:
+            ". . ."
+            ". welcomeBox ."
+            ". . ."
+            ". welcomeButton ."
+            ". . ."
+            ". todaysEvents ."
+            ". . ."
+    }
+    
     /* --- Team --- */
     
     .teamContent {
@@ -511,6 +558,26 @@
 
 /* --- Tablet --- */
 @media all and (min-width: 480px) and (max-width: 768px) {
+    /* --- Welcome Page --- */
+    
+    .welcomeContainer {
+        height: 100%;
+        width: 100%;
+        
+        /* Laying out the Welcome grid */
+        display: grid;
+        grid-template-columns: 1fr 13fr 1fr;
+        grid-template-rows: 1fr 16fr 1fr 4fr 1fr 21fr 1fr;
+        grid-template-areas:
+            ". . ."
+            ". welcomeBox ."
+            ". . ."
+            ". welcomeButton ."
+            ". . ."
+            ". todaysEvents ."
+            ". . ."
+    }
+    
     /* --- Team --- */
     
     .teamContent {
@@ -573,6 +640,26 @@
 
 /* --- Phone --- */
 @media all and (max-width: 480px) { 
+    /* --- Welcome Page --- */
+    
+    .welcomeContainer {
+        height: 100%;
+        width: 100%;
+        
+        /* Laying out the Welcome grid */
+        display: grid;
+        grid-template-columns: 1fr 13fr 1fr;
+        grid-template-rows: 1fr 16fr 1fr 4fr 1fr 21fr 1fr;
+        grid-template-areas:
+            ". . ."
+            ". welcomeBox ."
+            ". . ."
+            ". welcomeButton ."
+            ". . ."
+            ". todaysEvents ."
+            ". . ."
+    }
+  
     /* --- Team --- */
     
     .teamContent {

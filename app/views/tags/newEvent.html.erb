@@ -1,87 +1,89 @@
 <div class="backgroundScene"></div>
-<div class="container">
-    <div class="header">
-        <h1>Add a New Event to <%= @tag.tagName %></h1>
-    </div>
-    
-    <div class="nav">
-        <a href="/../welcome/index.html" class="navButton">Home</a>
-        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "navButton" } %>
-        <%= link_to 'Events', events_path, { :class => "navButton" } %>
-        <%= link_to 'Tags', tags_path, { :class => "navButton active" } %>
-        <a href="/../welcome/team.html" class="navButton">Team</a>
-        <a href="/../welcome/help.html" class="navButton">Help</a>
-    </div>
-    
-    <div class="content">
-        <% if @event.errors.any? %>
-            <div id="error_explanation">
-                <h2>
-                    <%= pluralize(@event.errors.count, "error") %> prohibited
-                    this event from being saved:
-                </h2>
-                <ul>
-                    <% @event.errors.full_messages.each do |msg| %>
-                        <li><%= msg %></li>
-                    <% end %>
-                </ul>
-            </div>
-        <% end %>
+<div class="shell">
+    <div class="container">
+        <div class="header">
+            <h1>Add a New Event to <%= @tag.tagName %></h1>
+        </div>
         
-        <%= form_for @event do |f| %>
-            <div class="eventForm">
-                <div class="labelBoxSmall">
-                    Title
+        <div class="nav">
+            <a href="/../welcome/index.html" class="navButton">Home</a>
+            <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "navButton" } %>
+            <%= link_to 'Events', events_path, { :class => "navButton" } %>
+            <%= link_to 'Tags', tags_path, { :class => "navButton active" } %>
+            <a href="/../welcome/team.html" class="navButton">Team</a>
+            <a href="/../welcome/help.html" class="navButton">Help</a>
+        </div>
+        
+        <div class="content">
+            <% if @event.errors.any? %>
+                <div id="error_explanation">
+                    <h2>
+                        <%= pluralize(@event.errors.count, "error") %> prohibited
+                        this event from being saved:
+                    </h2>
+                    <ul>
+                        <% @event.errors.full_messages.each do |msg| %>
+                            <li><%= msg %></li>
+                        <% end %>
+                    </ul>
                 </div>
-                <div class="dataBoxSmall">
-                    <%= f.text_field :title, placeholder: "What is your event's title?" %>
+            <% end %>
+            
+            <%= form_for @event do |f| %>
+                <div class="eventForm">
+                    <div class="labelBoxSmall">
+                        Title
+                    </div>
+                    <div class="dataBoxSmall">
+                        <%= f.text_field :title, placeholder: "What is your event's title?" %>
+                    </div>
+                    <div class="labelBoxSmall">
+                        Location:
+                    </div>
+                    <div class="dataBoxSmall">
+                        <%= f.text_field :location, placeholder: "Where, if anywhere, is your event located?" %>
+                    </div>
+                    <div class="labelBoxLarge">
+                        Information:
+                    </div>
+                    <div class="dataBoxLarge">
+                        <%= f.text_area :eventInformation, placeholder: "Are there any notes you'd like to include with your event?" %>
+                    </div>
+                    <div class="labelBoxSmall">
+                        Date:
+                    </div>
+                    <div class="dataBoxSmall">
+                        <%= f.date_select :eventDate, :date_separator => " / ", :order => [:month, :day, :year], :start_year => 2018, :end_year => 2030 %>
+                    </div>
+                    <div class="labelBoxSmall">
+                        Starting Time:
+                    </div>
+                    <div class="dataBoxSmall">
+                        <%= f.time_select :startTime, :ampm => true, :minute_step => 15 %>
+                    </div>
+                    <div class="labelBoxSmall">
+                        Ending Time:
+                    </div>
+                    <div class="dataBoxSmall">
+                        <%= f.time_select :endTime, :ampm => true, :minute_step => 15 %>
+                    </div>
+                    <div class="labelBoxSmall">
+                        Tag:
+                    </div>
+                    <div class="dataBoxSmall">
+                        <%= f.collection_select :tag_id, Tag.all, :id, :tagName, :selected => @tag.id %>
+                    </div>
+                    <div class="labelBoxSmall">
+                        Form Options:
+                    </div>
+                    <div class="dataBoxSmall">
+                        <%= f.submit :class => "submitButton" %>
+                        <%= submit_tag "Reset Form", :class => "resetButton", :type => "reset", :selected => @tag %>
+                    </div>
                 </div>
-                <div class="labelBoxSmall">
-                    Location:
-                </div>
-                <div class="dataBoxSmall">
-                    <%= f.text_field :location, placeholder: "Where, if anywhere, is your event located?" %>
-                </div>
-                <div class="labelBoxLarge">
-                    Information:
-                </div>
-                <div class="dataBoxLarge">
-                    <%= f.text_area :eventInformation, placeholder: "Are there any notes you'd like to include with your event?" %>
-                </div>
-                <div class="labelBoxSmall">
-                    Date:
-                </div>
-                <div class="dataBoxSmall">
-                    <%= f.date_select :eventDate, :date_separator => " / ", :order => [:month, :day, :year], :start_year => 2018, :end_year => 2030 %>
-                </div>
-                <div class="labelBoxSmall">
-                    Starting Time:
-                </div>
-                <div class="dataBoxSmall">
-                    <%= f.time_select :startTime, :ampm => true, :minute_step => 15 %>
-                </div>
-                <div class="labelBoxSmall">
-                    Ending Time:
-                </div>
-                <div class="dataBoxSmall">
-                    <%= f.time_select :endTime, :ampm => true, :minute_step => 15 %>
-                </div>
-                <div class="labelBoxSmall">
-                    Tag:
-                </div>
-                <div class="dataBoxSmall">
-                    <%= f.collection_select :tag_id, Tag.all, :id, :tagName, :selected => @tag.id %>
-                </div>
-                <div class="labelBoxSmall">
-                    Form Options:
-                </div>
-                <div class="dataBoxSmall">
-                    <%= f.submit :class => "submitButton" %>
-                    <%= submit_tag "Reset Form", :class => "resetButton", :type => "reset", :selected => @tag %>
-                </div>
-            </div>
-        <% end %>
-
-        <%= link_to "Back to #{ @tag.tagName }", tag_path(@tag), { :class => "basicButton" } %>
+            <% end %>
+    
+            <%= link_to "Back to #{ @tag.tagName }", tag_path(@tag), { :class => "basicButton" } %>
+        </div>
     </div>
 </div>

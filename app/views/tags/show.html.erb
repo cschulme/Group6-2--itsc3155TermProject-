@@ -1,101 +1,103 @@
 <div class="backgroundScene"></div>
-<div class="container">
-    <div class="header">
-        <h1><%= @tag.tagName %></h1>
-    </div>
-    
-    <div class="nav">
-        <a href="/../welcome/index.html" class="navButton">Home</a>
-        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "navButton" } %>
-        <%= link_to 'Events', events_path, { :class => "navButton" } %>
-        <%= link_to 'Tags', tags_path, { :class => "navButton active" } %>
-        <a href="/../welcome/team.html" class="navButton">Team</a>
-        <a href="/../welcome/help.html" class="navButton">Help</a>
-    </div>
-    
-    <div class="showContent">
-        <div class="infoContainer">
-            <div class="showShell">
-                <div class="startCap"></div>
-                <div class="box1">
-                    <div class="tagDescriptionHeader">
-                        Description
-                    </div>
-                    <div class="tagDescriptionInfo">
-                        <%= simple_format(@tag.description) %>
-                    </div>
-                </div>
-                <div class="box2">
-                    <div class="tagEventsHeader">
-                        Associated Events
-                    </div>
-                    <div class="tagEventsInfo">
-                        <% if @tag.events.count == 0 %>
-                            <div class="tagEventsNoInfo">
-                                <br>
-                                <i class="fa fa-calendar-times-o"></i>
-                                <h2>
-                                    This tag doesn't
-                                    <br>
-                                    have any associated
-                                    <br>
-                                    events yet.
-                                </h2>
-                            </div>
-                        <% else %>
-                            <% @tag.events.order(:eventDate).each do |event| %>
-                                <div class="tagEventsBox">
-                                    <div class="indicator"></div>
-                                    <%= link_to'<i class="fas fa-eye"></i>'.html_safe, event_path(event), :title => "Show Event", :class => "viewBox" %>
-                                    <div class="titleBox">
-                                        <%= event.title %>
-                                    </div>
-                                    <div class="infoBox1">
-                                        <% if event.location.blank? == false %>
-                                            <%= event.location %>&nbsp;|
-                                        <% end %>
-                                        <%= event.tag.tagName %>
-                                    </div>
-                                    <div class="infoBox2">
-                                        <%= event.eventDate.strftime("%m/%d/%Y") %> from <%= event.startTime.strftime("%I:%M %p") %> - <%= event.endTime.strftime("%I:%M %p") %>
-                                    </div>
-                                </div>
-                                <br>
-                            <% end %>
-                        <% end %>
-                    </div>
-                </div>
-                <div class="cap"></div>
-            </div>
-            
-            
-            <% if @tag.id == 1 %>
-                <div class="optionsBoxInactive">
-                    <div class="startCap"></div>
-                    <%= link_to'<i class="fa fa-calendar-plus-o" aria-hidden="true"></i>'.html_safe, tag_newEvent_path(@tag), :title => "Add Event", :class => "newBoxTag" %>
-                    <div class="inactiveButtons">
-                        <div class="editInactive">
-                            <i class="fas fa-edit"></i>
-                        </div>
-                        <div class="deleteInactive">
-                            <i class="fas fa-trash-alt"></i>
-                        </div>
-                    </div>
-                </div>
-            <% else %>
-                <div class="tagOptionsBox">
-                    <div class="startCap"></div>
-                    <%= link_to'<i class="fa fa-calendar-plus-o" aria-hidden="true"></i>'.html_safe, tag_newEvent_path(@tag), :class => "newBoxTag" %>
-                    <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_tag_path(@tag), :class => "editBoxTag" %>
-                    <%= link_to'<i class="fas fa-trash-alt"></i>'.html_safe, 
-                                                                    tag_path(@tag),
-                                                                    method: :delete,
-                                                                    data: { confirm: 'Are you sure you want to delete this tag?' },
-                                                                    :class => "deleteBoxTag" %>
-                </div>
-            <% end %>
+<div class="shell">
+    <div class="container">
+        <div class="header">
+            <h1><%= @tag.tagName %></h1>
         </div>
         
-        <%= link_to 'Back to Tags', tags_path, { :class => "basicButton" } %>
+        <div class="nav">
+            <a href="/../welcome/index.html" class="navButton">Home</a>
+            <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "navButton" } %>
+            <%= link_to 'Events', events_path, { :class => "navButton" } %>
+            <%= link_to 'Tags', tags_path, { :class => "navButton active" } %>
+            <a href="/../welcome/team.html" class="navButton">Team</a>
+            <a href="/../welcome/help.html" class="navButton">Help</a>
+        </div>
+        
+        <div class="showContent">
+            <div class="infoContainer">
+                <div class="showShell">
+                    <div class="startCap"></div>
+                    <div class="box1">
+                        <div class="tagDescriptionHeader">
+                            Description
+                        </div>
+                        <div class="tagDescriptionInfo">
+                            <%= simple_format(@tag.description) %>
+                        </div>
+                    </div>
+                    <div class="box2">
+                        <div class="tagEventsHeader">
+                            Associated Events
+                        </div>
+                        <div class="tagEventsInfo">
+                            <% if @tag.events.count == 0 %>
+                                <div class="tagEventsNoInfo">
+                                    <br>
+                                    <i class="fa fa-calendar-times-o"></i>
+                                    <h2>
+                                        This tag doesn't
+                                        <br>
+                                        have any associated
+                                        <br>
+                                        events yet.
+                                    </h2>
+                                </div>
+                            <% else %>
+                                <% @tag.events.order(:eventDate).each do |event| %>
+                                    <div class="tagEventsBox">
+                                        <div class="indicator"></div>
+                                        <%= link_to'<i class="fas fa-eye"></i>'.html_safe, event_path(event), :title => "Show Event", :class => "viewBox" %>
+                                        <div class="titleBox">
+                                            <%= event.title %>
+                                        </div>
+                                        <div class="infoBox1">
+                                            <% if event.location.blank? == false %>
+                                                <%= event.location %>&nbsp;|
+                                            <% end %>
+                                            <%= event.tag.tagName %>
+                                        </div>
+                                        <div class="infoBox2">
+                                            <%= event.eventDate.strftime("%m/%d/%Y") %> from <%= event.startTime.strftime("%I:%M %p") %> - <%= event.endTime.strftime("%I:%M %p") %>
+                                        </div>
+                                    </div>
+                                    <br>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </div>
+                    <div class="cap"></div>
+                </div>
+                
+                
+                <% if @tag.id == 1 %>
+                    <div class="optionsBoxInactive">
+                        <div class="startCap"></div>
+                        <%= link_to'<i class="fa fa-calendar-plus-o" aria-hidden="true"></i>'.html_safe, tag_newEvent_path(@tag), :title => "Add Event", :class => "newBoxTag" %>
+                        <div class="inactiveButtons">
+                            <div class="editInactive">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                            <div class="deleteInactive">
+                                <i class="fas fa-trash-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                <% else %>
+                    <div class="tagOptionsBox">
+                        <div class="startCap"></div>
+                        <%= link_to'<i class="fa fa-calendar-plus-o" aria-hidden="true"></i>'.html_safe, tag_newEvent_path(@tag), :class => "newBoxTag" %>
+                        <%= link_to'<i class="fas fa-edit"></i>'.html_safe, edit_tag_path(@tag), :class => "editBoxTag" %>
+                        <%= link_to'<i class="fas fa-trash-alt"></i>'.html_safe, 
+                                                                        tag_path(@tag),
+                                                                        method: :delete,
+                                                                        data: { confirm: 'Are you sure you want to delete this tag?' },
+                                                                        :class => "deleteBoxTag" %>
+                    </div>
+                <% end %>
+            </div>
+            
+            <%= link_to 'Back to Tags', tags_path, { :class => "basicButton" } %>
+        </div>
     </div>
 </div>

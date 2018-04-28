@@ -1,68 +1,70 @@
 <div class="backgroundScene"></div>
-<div class="container">
-    <div class="header">
-        <h1>Your Guide to Your Calendar</h1>
-    </div>
-    
-    <div class="nav">
-        <a href="/../welcome/index.html" class="navButton">Home</a>
-        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "navButton" } %>
-        <%= link_to 'Events', events_path, { :class => "navButton" } %>
-        <%= link_to 'Tags', tags_path, { :class => "navButton" } %>
-        <a href="/../welcome/team.html" class="navButton">Team</a>
-        <a href="/../welcome/help.html" class="navButton active">Help</a>
-    </div>
-    
-    <div class="helpContent">
-        <div class="startCap"></div>
-        <div class="helpContainer">
-            <h1>Introduction</h1>
-            <p>
-                Welcome, and thank you for using eVents! &nbsp;We built this web app to allow you to easily organize your life, and we thank you for 
-                using it! &nbsp;If you'd like to learn about your calendar, you can read more about the features below.
-            </p>
-            <h1>Your Events</h1>
-            <p>
-                You can store any important events in your life on this app. &nbsp;To add an event, simply go to the "Events" tab and click "New Event". &nbsp;
-                When creating an event, an event must have a title, a date, a starting and ending time, and a tag (you can read more about tags below!). &nbsp;
-                If you'd like to, you can also give your events a location, as well as provide any relevant information about the event that you'd like to remember. 
-                &nbsp;
-            </p>
-            <p>
-                Once an event is created, it will be listed under the "Events" tab. &nbsp;From there, you're given the option to either view, edit, or delete 
-                any event. &nbsp;
-            </p>
-            <h1>Your Tags</h1>
-            <p>
-                Tags are a way to categorize your events, allowing you to group them and easily see the ones relevant to a certain aspect of your life.&nbsp;
-                Every event belongs to a tag. &nbsp;By default, an event is assigned to the "General" tag. &nbsp;However, you can create as many tags as you'd
-                like, be it a "Family" tag, a "Work" tag, or even a "Conclave of Cat Lovers" tag!
-            </p>
-            <p>
-                When you create an event, all tags that you have made, along with the "General" tag, are selectable for you to assign your event to. &nbsp;
-                Let's say you accidentally assigned your mother's birthday to the "Work" tag -- while I'm sure there are some of you who may see no issue with that,
-                you can easily change that event to the "Family" tag by editing your event and selecting the right tag.
-            </p>
-            <p>
-                Maybe you've got a tag on your account that's no longer relevant to you? &nbsp;Simply delete the tag, and all associated events will be automatically
-                moved to the "General" tag for you to either leave be or go in and reassign to different tags.
-            </p>
-            <h1>Your Calendar</h1>
-            <p>
-                The calendar view will show you your events displayed as a traditional calendar. &nbsp;The calendar will default to the current month, but you can 
-                easily navigate to other months by clicking the arrow icons on either side of the month title to go the previous or next month. &nbsp;You can also 
-                navigate to a specific month by selecting it from the sidebar. &nbsp;The month links in the sidebar correspond to the months of the year you are 
-                currently viewing. &nbsp;For example, if you are on "May, 2019", clicking "December" will take you to "December, 2019".
-            </p>
-            <p>
-                If you have any events for that month, a button will be put on each day you have events. &nbsp;The number of events on that day will be displayed on 
-                each button. &nbsp;If you click the button, you will be shown all the events for that day and will have the option to view, edit, or delete any of 
-                those events.
-            </p>
-            <p>
-                When hovering over a day on the calendar, a "+" will appear. &nbsp;Clicking it will allow you to add an event for that specific day.
-            </p>
+<div class="shell">
+    <div class="container">
+        <div class="header">
+            <h1>Your Guide to Your Calendar</h1>
         </div>
-        <div class="cap"></div>
+        
+        <div class="nav">
+            <a href="/../welcome/index.html" class="navButton">Home</a>
+            <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "navButton" } %>
+            <%= link_to 'Events', events_path, { :class => "navButton" } %>
+            <%= link_to 'Tags', tags_path, { :class => "navButton" } %>
+            <a href="/../welcome/team.html" class="navButton">Team</a>
+            <a href="/../welcome/help.html" class="navButton active">Help</a>
+        </div>
+        
+        <div class="helpContent">
+            <div class="startCap"></div>
+            <div class="helpContainer">
+                <h1>Introduction</h1>
+                <p>
+                    Welcome, and thank you for using eVents! &nbsp;We built this web app to allow you to easily organize your life, and we thank you for 
+                    using it! &nbsp;If you'd like to learn about your calendar, you can read more about the features below.
+                </p>
+                <h1>Your Events</h1>
+                <p>
+                    You can store any important events in your life on this app. &nbsp;To add an event, simply go to the "Events" tab and click "New Event". &nbsp;
+                    When creating an event, an event must have a title, a date, a starting and ending time, and a tag (you can read more about tags below!). &nbsp;
+                    If you'd like to, you can also give your events a location, as well as provide any relevant information about the event that you'd like to remember. 
+                    &nbsp;
+                </p>
+                <p>
+                    Once an event is created, it will be listed under the "Events" tab. &nbsp;From there, you're given the option to either view, edit, or delete 
+                    any event. &nbsp;
+                </p>
+                <h1>Your Tags</h1>
+                <p>
+                    Tags are a way to categorize your events, allowing you to group them and easily see the ones relevant to a certain aspect of your life.&nbsp;
+                    Every event belongs to a tag. &nbsp;By default, an event is assigned to the "General" tag. &nbsp;However, you can create as many tags as you'd
+                    like, be it a "Family" tag, a "Work" tag, or even a "Conclave of Cat Lovers" tag!
+                </p>
+                <p>
+                    When you create an event, all tags that you have made, along with the "General" tag, are selectable for you to assign your event to. &nbsp;
+                    Let's say you accidentally assigned your mother's birthday to the "Work" tag -- while I'm sure there are some of you who may see no issue with that,
+                    you can easily change that event to the "Family" tag by editing your event and selecting the right tag.
+                </p>
+                <p>
+                    Maybe you've got a tag on your account that's no longer relevant to you? &nbsp;Simply delete the tag, and all associated events will be automatically
+                    moved to the "General" tag for you to either leave be or go in and reassign to different tags.
+                </p>
+                <h1>Your Calendar</h1>
+                <p>
+                    The calendar view will show you your events displayed as a traditional calendar. &nbsp;The calendar will default to the current month, but you can 
+                    easily navigate to other months by clicking the arrow icons on either side of the month title to go the previous or next month. &nbsp;You can also 
+                    navigate to a specific month by selecting it from the sidebar. &nbsp;The month links in the sidebar correspond to the months of the year you are 
+                    currently viewing. &nbsp;For example, if you are on "May, 2019", clicking "December" will take you to "December, 2019".
+                </p>
+                <p>
+                    If you have any events for that month, a button will be put on each day you have events. &nbsp;The number of events on that day will be displayed on 
+                    each button. &nbsp;If you click the button, you will be shown all the events for that day and will have the option to view, edit, or delete any of 
+                    those events.
+                </p>
+                <p>
+                    When hovering over a day on the calendar, a "+" will appear. &nbsp;Clicking it will allow you to add an event for that specific day.
+                </p>
+            </div>
+            <div class="cap"></div>
+        </div>
     </div>
 </div>
