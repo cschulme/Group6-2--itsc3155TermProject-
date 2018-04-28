@@ -199,16 +199,6 @@
     grid-area: content;
     background-color: rgba(255, 255, 255, 0.5);
     overflow-y: auto;
-    
-    display: grid;
-    grid-template-columns: 65px 1fr 65px;
-    grid-template-rows: 40px 10px 1fr 10px 40px;
-    grid-template-areas:
-        ". . ."
-        ". startCap ."
-        ". helpContainer ."
-        ". cap ."
-        ". . .";
 }
 
 .startCap {
@@ -232,7 +222,6 @@
 }
 
 .helpContainer p {
-    font-size: 2.5vmin; 
     text-align: justify;
 }
 
@@ -244,11 +233,6 @@
 .teamContent {
     grid-area: content;
     background-color: rgba(255, 255, 255, 0.5);
-    
-    padding: 10px;
-    overflow-y: auto;
-    padding-left: 15%;
-    padding-right: 15%;
     
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -292,6 +276,7 @@
     justify-content: center;
     align-items: center;
     color: white;
+    font-weight: bold;
     background: linear-gradient(to bottom right, rgba(40, 149, 251, 0.9), rgba(32, 108, 183, 0.9));
 }
 
@@ -326,4 +311,324 @@
 
 .space {
     background-color: rgba(255, 255, 255, 0);
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* --- Largest Screens --- */
+@media all and (min-width: 1280px) {
+    /* --- Team --- */
+    
+    .teamContent {
+        padding: 10px;
+        overflow-y: auto;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+    
+    .memberContainer {
+        height: 150px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+        
+        display: grid;
+        grid-template-rows: 90px 60px 25px;
+        grid-template-columns: 150px 1fr;
+        grid-template-areas:
+            "memberPicture memberName"
+            "memberPicture memberRole"
+            "pictureBottom space";
+    }
+    
+    .memberPicture img {
+        grid-area: memberPicture;
+        
+        height: 140px;
+        width: 140px;
+        float: left;
+        border: 5px solid white;
+    }
+    
+    .memberName {
+        font-size: 24pt;
+    }
+    
+    .memberRole {
+        font-size: 18pt;
+    }
+    
+    /* --- Help --- */
+    
+    .helpContent {
+        grid-area: content;
+        background-color: rgba(255, 255, 255, 0.5);
+        overflow-y: auto;
+        
+        display: grid;
+        grid-template-columns: 65px 1fr 65px;
+        grid-template-rows: 40px 10px 1fr 10px 40px;
+        grid-template-areas:
+            ". . ."
+            ". startCap ."
+            ". helpContainer ."
+            ". cap ."
+            ". . .";
+    }
+    
+    .helpContainer p {
+        font-size: 24px;
+    }
+}
+
+/* --- Regular Desktop --- */
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+    /* --- Team --- */
+    
+    .teamContent {
+        padding: 10px;
+        overflow-y: auto;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    
+    .memberContainer {
+        height: 150px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+        
+        display: grid;
+        grid-template-rows: 90px 60px 25px;
+        grid-template-columns: 150px 1fr;
+        grid-template-areas:
+            "memberPicture memberName"
+            "memberPicture memberRole"
+            "pictureBottom space";
+    }
+    
+    .memberPicture img {
+        grid-area: memberPicture;
+        
+        height: 140px;
+        width: 140px;
+        float: left;
+        border: 5px solid white;
+    }
+    
+    .memberName {
+        font-size: 24pt;
+    }
+    
+    .memberRole {
+        font-size: 18pt;
+    }
+    
+    /* --- Help --- */
+    
+    .helpContent {
+        grid-area: content;
+        background-color: rgba(255, 255, 255, 0.5);
+        overflow-y: auto;
+        
+        display: grid;
+        grid-template-columns: 65px 1fr 65px;
+        grid-template-rows: 40px 10px 1fr 10px 40px;
+        grid-template-areas:
+            ". . ."
+            ". startCap ."
+            ". helpContainer ."
+            ". cap ."
+            ". . .";
+    }
+    
+    .helpContainer p {
+        font-size: 24px;
+    }
+}
+ 
+/* --- Tablet Landscape --- */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    /* --- Team --- */
+    
+    .teamContent {
+        padding: 10px;
+        overflow-y: auto;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    
+    .memberContainer {
+        height: 100px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+        
+        display: grid;
+        grid-template-rows: 60px 40px 25px;
+        grid-template-columns: 100px 1fr;
+        grid-template-areas:
+            "memberPicture memberName"
+            "memberPicture memberRole"
+            "pictureBottom space";
+    }
+    
+    .memberPicture img {
+        grid-area: memberPicture;
+        
+        height: 90px;
+        width: 90px;
+        float: left;
+        border: 5px solid white;
+    }
+    
+    .memberName {
+        font-size: 18pt;
+    }
+    
+    /* --- Help --- */
+    
+    .helpContent {
+        grid-area: content;
+        background-color: rgba(255, 255, 255, 0.5);
+        overflow-y: auto;
+        
+        display: grid;
+        grid-template-columns: 30px 1fr 30px;
+        grid-template-rows: 20px 10px 1fr 10px 20px;
+        grid-template-areas:
+            ". . ."
+            ". startCap ."
+            ". helpContainer ."
+            ". cap ."
+            ". . .";
+    }
+    
+    .helpContainer p {
+        font-size: 18px;
+    }
+}
+
+/* --- Tablet --- */
+@media all and (min-width: 480px) and (max-width: 768px) {
+    /* --- Team --- */
+    
+    .teamContent {
+        padding: 10px;
+        overflow-y: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .memberContainer {
+        height: 100px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+        
+        display: grid;
+        grid-template-rows: 60px 40px 25px;
+        grid-template-columns: 100px 1fr;
+        grid-template-areas:
+            "memberPicture memberName"
+            "memberPicture memberRole"
+            "pictureBottom space";
+    }
+    
+    .memberPicture img {
+        grid-area: memberPicture;
+        
+        height: 90px;
+        width: 90px;
+        float: left;
+        border: 5px solid white;
+    }
+    
+    .memberName {
+        font-size: 18pt;
+    }
+    
+    /* --- Help --- */
+    
+    .helpContent {
+        grid-area: content;
+        background-color: rgba(255, 255, 255, 0.5);
+        overflow-y: auto;
+        
+        display: grid;
+        grid-template-columns: 30px 1fr 30px;
+        grid-template-rows: 20px 10px 1fr 10px 20px;
+        grid-template-areas:
+            ". . ."
+            ". startCap ."
+            ". helpContainer ."
+            ". cap ."
+            ". . .";
+    }
+    
+    .helpContainer p {
+        font-size: 18px;
+    }
+}
+
+/* --- Phone --- */
+@media all and (max-width: 480px) { 
+    /* --- Team --- */
+    
+    .teamContent {
+        padding: 10px;
+        overflow-y: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .memberContainer {
+        height: 80px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.25), 10px 0px 20px rgba(54, 54, 54, 0.25);
+        
+        display: grid;
+        grid-template-rows: 48px 32px 25px;
+        grid-template-columns: 80px 1fr;
+        grid-template-areas:
+            "memberPicture memberName"
+            "memberPicture memberRole"
+            "pictureBottom space";
+    }
+    
+    .memberPicture img {
+        grid-area: memberPicture;
+        
+        height: 70px;
+        width: 70px;
+        float: left;
+        border: 5px solid white;
+    }
+    
+    .memberName {
+        font-size: 18pt;
+    }
+    
+    /* --- Help --- */
+    
+    .helpContent {
+        grid-area: content;
+        background-color: rgba(255, 255, 255, 0.5);
+        overflow-y: auto;
+        
+        display: grid;
+        grid-template-columns: 20px 1fr 20px;
+        grid-template-rows: 15px 10px 1fr 10px 15px;
+        grid-template-areas:
+            ". . ."
+            ". startCap ."
+            ". helpContainer ."
+            ". cap ."
+            ". . .";
+    }
+    
+    .helpContainer p {
+        font-size: 18px;
+    }
 }

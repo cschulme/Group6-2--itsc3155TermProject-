@@ -56,10 +56,14 @@ html, body {
 .container {
     /* Dimensions of Container */
     height: 100%;
-    width: 70%;
-    margin: auto;
+    width: 100%;
+    margin: 0;
     padding: 0px;
     position: relative;
+    
+    /* Styling for Container */
+    box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    
     
     /* Styling for Container */
     box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
@@ -67,10 +71,11 @@ html, body {
     /* Grid Layout */
     display: grid;
     grid-template-rows: 2fr 1fr 16fr;
+    grid-template-columns: 1fr 1200px 1fr;
     grid-template-areas:
-        "header"
-        "nav"
-        "content";
+        ". header ."
+        ". nav ."
+        ". content .";
 }
 
 /* --- Header --- */
@@ -82,8 +87,10 @@ html, body {
     background: linear-gradient(to bottom right, rgba(32, 108, 183, 0.9), rgba(20, 68, 117, 0.9));
     text-align: center;
     color: white;
-    font-size: 25px;
-    font-size: 2vmin;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* --- Navigation --- */
@@ -94,23 +101,21 @@ html, body {
     
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
     overflow: hidden;
-    font-size: 25px;
-    font-size: 2.5vmin;
     box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.4), 10px 0px 20px rgba(54, 54, 54, 0.4);
 }
 
-.nav a {
-    text-align: center;
+.navButton {
+    
     font-weight: bold;
     height: 100%;
-    width: calc((100% / 6) - 12px);
-    padding: 6px;
-    padding-top: 12px;
+    width: 100%;
+    
     text-decoration: none;
     color: black;
-    display: block;
-    float: left;
-    overflow: hidden;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav a:hover {
@@ -127,10 +132,149 @@ html, body {
     background: linear-gradient(to bottom right, rgb(34, 111, 184), rgb(102, 180, 252));
     transition: 0.3s;
 }
+ 
+/* --- RESPONSIVE DESIGN --- */
 
-/* --- Mobile CSS --- */
- @media only screen and (max-width: 600px) {
-     .container {
-         width: 100%;
-     }
- }
+/* --- Largest Screens --- */
+@media all and (min-width: 1280px) {
+    .container {
+        /* Styling for Container */
+        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    
+        /* Grid Layout */
+        display: grid;
+        grid-template-rows: 2fr 1fr 16fr;
+        grid-template-columns: 1fr 1200px 1fr;
+        grid-template-areas:
+            ". header ."
+            ". nav ."
+            ". content .";
+    }   
+    
+    .header {
+        font-size: 2vmin;
+    }
+    
+    .nav {
+        font-size: 24px;
+        
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+            "navButton navButton navButton navButton navButton navButton";
+    }
+}
+
+/* --- Regular Desktop --- */
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+    .container {
+        /* Styling for Container */
+        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    
+        /* Grid Layout */
+        display: grid;
+        grid-template-rows: 2fr 1fr 16fr;
+        grid-template-columns: 1fr 1000px 1fr;
+        grid-template-areas:
+            ". header ."
+            ". nav ."
+            ". content .";
+    }
+    
+    .header {
+        font-size: 100%;
+    }
+    
+    .nav {
+        font-size: 24px;
+        
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+            "navButton navButton navButton navButton navButton navButton";
+    }
+}
+ 
+/* --- Tablet Landscape --- */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        /* Styling for Container */
+        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    
+        /* Grid Layout */
+        display: grid;
+        grid-template-rows: 2fr 2fr 16fr;
+        grid-template-columns: 1fr 750px 1fr;
+        grid-template-areas:
+            ". header ."
+            ". nav ."
+            ". content .";
+    } 
+    
+    .nav {
+        font-size: 20px;
+        
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "navButton navButton navButton" 
+            "navButton navButton navButton";
+    }
+}
+
+/* --- Tablet --- */
+@media all and (min-width: 480px) and (max-width: 768px) {
+    .container {
+        /* Styling for Container */
+        box-shadow: -10px 0px 20px rgba(54, 54, 54, 0.502), 10px 0px 20px rgba(54, 54, 54, 0.502);
+    
+        /* Grid Layout */
+        display: grid;
+        grid-template-rows: 2fr 2fr 16fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "content";
+    }  
+    
+    .nav {
+        font-size: 20px;
+        
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "navButton navButton navButton" 
+            "navButton navButton navButton";
+    }
+}
+
+/* --- Phone --- */
+@media all and (max-width: 480px) { 
+    .container {
+        /* Grid Layout */
+        display: grid;
+        grid-template-rows: 2fr 3fr 16fr;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "nav"
+            "content";
+    }  
+    
+    .nav {
+        font-size: 16px;
+        
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "navButton navButton"
+            "navButton navButton" 
+            "navButton navButton";
+    }
+}

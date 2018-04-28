@@ -5,12 +5,12 @@
     </div>
     
     <div class="nav">
-        <a href="/../welcome/index.html">Home</a>
-        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "active" } %>
-        <%= link_to 'Events', events_path %>
-        <%= link_to 'Tags', tags_path %>
-        <a href="/../welcome/team.html">Team</a>
-        <a href="/../welcome/help.html">Help</a>
+        <a href="/../welcome/index.html" class="navButton">Home</a>
+        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "navButton active" } %>
+        <%= link_to 'Events', events_path, { :class => "navButton" } %>
+        <%= link_to 'Tags', tags_path, { :class => "navButton" } %>
+        <a href="/../welcome/team.html" class="navButton">Team</a>
+        <a href="/../welcome/help.html" class="navButton">Help</a>
     </div>
     
     <div class="calendarContent">

@@ -5,12 +5,12 @@
     </div>
     
     <div class="nav">
-        <a href="/../welcome/index.html">Home</a>
-        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id) %>
-        <%= link_to 'Events', events_path %>
-        <%= link_to 'Tags', tags_path %>
-        <a href="/../welcome/team.html" class="active">Team</a>
-        <a href="/../welcome/help.html">Help</a>
+        <a href="/../welcome/index.html" class="navButton">Home</a>
+        <%= link_to 'Calendar', calendar_view_thisMonth_path(:calendar_view_id), { :class => "navButton" } %>
+        <%= link_to 'Events', events_path, { :class => "navButton" } %>
+        <%= link_to 'Tags', tags_path, { :class => "navButton" } %>
+        <a href="/../welcome/team.html" class="navButton active">Team</a>
+        <a href="/../welcome/help.html" class="navButton">Help</a>
     </div>
     
     <div class="teamContent">
@@ -20,14 +20,12 @@
                 <img src="<%= image_path("AleksTeamPic.jpg") %>" alt="Aleks' Profile Picture">
             </div>
             <div class="memberName">
-                <h1>Aleks Popovich</h1>
+                Aleks Popovich
             </div>
             <div class="memberRole">
-                <h3>
-                    Database Design &nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class="fas fa-envelope"></i> 
-                    <a href="mailto:apopovi3@uncc.edu" target="_top">apopovi3@uncc.edu</a>
-                </h3>
+                Database Design &nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fas fa-envelope"></i>&nbsp; 
+                <a href="mailto:apopovi3@uncc.edu" target="_top">apopovi3@uncc.edu</a>
             </div>
             <div class="pictureBottom">Aleks</div>
             <div class="space"></div>
@@ -39,14 +37,12 @@
                 <img src="<%= image_path("ChristianTeamPic.jpg") %>" alt="Christian's Profile Picture">
             </div>
             <div class="memberName">
-                <h1>Christian Schulmeister</h1>
+                Christian Schulmeister
             </div>
             <div class="memberRole">
-                <h3>
-                    Back-end Development &nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:cschulme@uncc.edu" target="_top">cschulme@uncc.edu</a>
-                </h3>
+                Back-end Development &nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fas fa-envelope"></i>&nbsp; 
+                <a href="mailto:cschulme@uncc.edu" target="_top">cschulme@uncc.edu</a>
             </div>
             <div class="pictureBottom">Christian</div>
             <div class="space"></div>
@@ -58,14 +54,12 @@
                 <img src="<%= image_path("HouaTeamPic.jpg") %>" alt="Houa's Profile Picture">
             </div>
             <div class="memberName">
-                <h1>Houa Yang</h1>
+                Houa Yang
             </div>
             <div class="memberRole">
-                <h3>
-                    Front-end Development &nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:hyang29@uncc.edu" target="_top">hyang29@uncc.edu</a>
-                </h3>
+                Front-end Development &nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fas fa-envelope"></i>&nbsp; 
+                <a href="mailto:hyang29@uncc.edu" target="_top">hyang29@uncc.edu</a>
             </div>
             <div class="pictureBottom">Houa</div>
             <div class="space"></div>
@@ -77,14 +71,12 @@
                 <img src="<%= image_path("MongTeamPic.jpg") %>" alt="Mong's Profile Picture">
             </div>
             <div class="memberName">
-                <h1>Mong Lor</h1>
+                Mong Lor
             </div>
             <div class="memberRole">
-                <h3>
-                    Documentation &nbsp;&nbsp;&nbsp;&nbsp;
-                    <i class="fas fa-envelope"></i> 
-                    <a href="mailto:mlor13@uncc.edu" target="_top">mlor13@uncc.edu</a>
-                </h3>
+                Documentation &nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fas fa-envelope"></i>&nbsp; 
+                <a href="mailto:mlor13@uncc.edu" target="_top">mlor13@uncc.edu</a>
             </div>
             <div class="pictureBottom">Mong</div>
             <div class="space"></div>
