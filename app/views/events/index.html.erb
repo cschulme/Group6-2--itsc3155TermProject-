@@ -20,8 +20,13 @@
                     <div class="noEvents">
                         <br><br><br><br>
                         <i class="fa fa-calendar-times-o"></i>
-                        <h1>You don't have any events yet!</h1>
-                        <h2>Go ahead and click the button below to add your first event.</h2>
+                        <% if @events == Event.where(["eventDate >= ?", Date.today]) %>
+                            <h1>You don't have any upcoming events!</h1>
+                            <h2>Go ahead and click the button below to add an event.</h2>
+                        <% else %>
+                            <h1>You don't have any events yet!</h1>
+                            <h2>Go ahead and click the button below to add your first event.</h2>
+                        <% end %>
                     </div>
                 <% else %>
                     <% @events.order(:eventDate).order(:startTime).each do |event| %>
